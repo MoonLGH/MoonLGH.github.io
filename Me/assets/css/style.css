@@ -1,0 +1,84 @@
+
+.jumbotron {
+  padding-top: 1rem;
+  padding-bottom: 0rem;
+  background-color: #9FDFFC;
+}
+
+.card-title {
+  text-align: center;
+}
+
+#abtme {
+  margin: 0 auto;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  /*width: 90%;*/
+  /*margin-bottom: 20px;*/
+}
+
+#things {
+  border-radius: 30px;
+  background: #B5E8F0;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  /*box-shadow: box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;*/
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0,0,0,0.9) 0px 0px 0px 1px;
+}
+
+.col-md-3 > h3 {
+  color: white;
+}
+
+#tableabtme {
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+@media (max-width: 992px) {
+  h2 {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 992px) {
+  h3 {
+    font-size: 20px;
+  }
+}
+
+hr {
+  height: 3px;
+  border: black solid 1px;
+}
+
+.col-md-3 h3 {
+  margin: auto;
+}
+
+.col-md-3 h2 {
+  margin: auto;
+}
+
+.col-md-4 h2 {
+  margin: auto;
+}
+
+.col-md-4 h3 {
+  margin: auto;
+}
+
+#main {
+  padding-top: 3rem;
+}
+
