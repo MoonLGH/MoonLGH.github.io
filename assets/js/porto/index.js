@@ -10,12 +10,13 @@ async function get(name) {
     //get repos
     const repos = await fetch(`https://api.github.com/users/${name}/repos`)
     const repojson = await repos.json()
-    document.getElementById("projects").style.display = "none"
+    document.getElementById("repos").style.display = "none"
+    console.log(data)
     let i = 0
     for (repo of repojson) {
       let fork = ""
       if (repo.fork) {
-        fork = "A Fork Repo"
+        fork = "<span><strong>A Fork Repo</strong></span>"
       }
       let desc = repo.description || "No Description."
       const a = document.createElement("a")
@@ -23,9 +24,7 @@ async function get(name) {
       a.innerHTML = `
       <div>
       <h3>${repo.full_name}</h3>
-      <span>
-      <strong>${fork}</strong>
-      </span>
+      ${fork}
       </div>
       <br>
       <p>${desc}</p>
@@ -49,7 +48,7 @@ async function get(name) {
       }
       a.href = repo.html_url
       a.classList.add("github-card")
-      document.getElementById("projects").appendChild(a)
+      document.getElementById("repos").appendChild(a)
       i++
     }
     if(i >= 10){
@@ -62,21 +61,177 @@ async function get(name) {
       morebtn.classList.add("btn")
       morebtn.classList.add("btn-primary")
       morebtn.classList.add("text-center")
-      morebtn.classList.add("slide-left")
       morebtn.setAttribute("data-aos","fade-left")
       morebtn.setAttribute("onclick","togglehide(this)")
-      document.getElementById("github").appendChild(morebtn)
+      morebtn.setAttribute("toggled","no")
+      document.getElementById("github").appendChild(morebtn)  
     }
-    document.getElementById("projects").style.display = "flex"
+    document.getElementById("repos").style.display = "flex"
     // document.getElementById("projects").classList.add("slide-right")
+    getUserCard(name)
   }
-  
+  async function getUserCard(name){
+  let repothings = await getRepoThings(name)
+  let usersThing = await getUserThings(name)
+
+    const card = document.createElement("div")
+    card.classList.add("card")
+    card.style.display = "flex"
+    card.style.justifyContent = "center"
+    card.style.alignItems = "center"
+    card.style.border = "none"
+    card.innerHTML = `
+    <div class="card-body" style="width: auto;border: 1px solid;height: auto; margin:auto">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3" style="width: auto;"><img src="${usersThing.avatar}" style="width: 5rem;height: auto;border-radius: 10px;border: 1px solid;"></div>
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col">
+                        <a href="${usersThing.gh_url}" style="color: black;font-size: 25px;text-decoration: none;">${usersThing.nick}</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p>Joined at : ${usersThing.created_at}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p><strong>Bio</strong><br />${usersThing.bio}<br><br><strong>Location</strong> : ${usersThing.location}</p>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="col">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3">
+                    <p><strong>Followers</strong><br>${usersThing.followers}</p>
+                </div>
+                <div class="col-md-3">
+                    <p><strong>Following</strong><br>${usersThing.following}</p>
+                </div>
+                <div class="col-md-3">
+                    <p><strong>Total Repos</strong><br>${usersThing.repos_total}</p>
+                </div>
+                <div class="col-md-3">
+                    <p><strong>Total Forked</strong><br>${repothings.total_fork}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-md-4">
+                        <h3>Top Langs</h3>
+                    </div>
+                </div>
+                <div class="row text-center">
+                  ${repothings.langs}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+`
+document.getElementById("github-card-info").appendChild(card)
+  }
+
+  async function getRepoThings(name){
+    const repos = await fetch(`https://api.github.com/users/${name}/repos`)
+    let returnedObj = {}
+    const repojson = await repos.json()
+    let langs = []
+    let totfork = 0
+    for (repo of repojson) {
+      if(repo.language) {
+        langs.push(repo.language)
+      }
+      if(repo.forks_count > 0){
+        totfork += repo.forks_count
+      }
+    }
+    var count = {};
+    langs.forEach(function(i) { count[i] = (count[i]||0) + 1;});
+    langs = []
+    for(var key in count){
+      langs.push({key: key, value: count[key]})
+    }
+    let langshtml = ``
+    langs.sort((a,b) => b.value - a.value).splice(3)
+    for (let i = 0; i < langs.length; i++) {
+      const e = langs[i];
+      if(!e) return
+      langshtml += `<div class="col-md-4" style="border: 1px solid;">
+      <p style="margin:auto">${e.key}<br>${e.value} Projects</p></div>`
+    }
+    returnedObj["langs"] = langshtml
+    returnedObj["total_fork"] = totfork
+    return returnedObj  
+  }
+  async function getUserThings(name){
+    const res = await fetch(`https://api.github.com/users/${name}`)
+    const data = await res.json()
+    let userobj = {}
+    if("created_at" in data){
+      userobj["created_at"] = new Date(data.created_at).toLocaleDateString()
+    }
+    if("name" in data){
+      userobj["nick"] = data.name
+    }
+    if("bio" in data){
+      userobj["bio"] = data.bio
+    }
+    if("followers" in data){
+      userobj["followers"] = data.followers
+    }
+    if("following" in data){
+      userobj["following"] = data.following
+    }
+    if("location" in data){
+      userobj["location"] = data.location
+    }
+    if("twitter_username" in data){
+      userobj["twitter"] = data.twitter_username
+    }
+    if("html_url" in data){
+      userobj["gh_url"] = data.html_url
+    }
+    if("avatar_url" in data){
+      userobj["avatar"] = data.avatar_url
+    }
+    if("public_repos" in data){
+      userobj["repos_total"] = data.public_repos
+    }
+    return userobj
+  }
   get("MoonLGH")
   
   
     function togglehide(btn){
-        console.log(btn)
+      if(btn.getAttribute("toggled") === "no"){
+        console.log("no")
+        btn.setAttribute("toggled","yes")
+        document.querySelector("#repos").querySelectorAll(".proj-more").forEach(e=>{
+          e.style.display = ""
+        })
+        btn.innerText = "See Less"
+      }else{
+        console.log("yes")
+        document.querySelector("#repos").querySelectorAll(".proj-more").forEach(e=>{
+          e.style.display = "none"
+        })
+        btn.innerText = "See More"
+        btn.setAttribute("toggled","no")
+      }
+
     }
+
   function skills(skill) {
     let ind= 0
     skill.forEach(s => {
