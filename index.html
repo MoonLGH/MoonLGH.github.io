@@ -1,95 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>MoonL</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/index.css">
-    <link rel="stylesheet" href="assets/css/Dark-NavBar.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link href="assets/css/aos.css" rel="stylesheet">
-    <meta property="og:title" content="MoonL" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://moonl.me" />
-    <!-- <meta property="og:image" content="http://my.site.com/images/thumb.png" /> -->
-    <meta property="og:description" content="MoonL Web" />
-    <meta name="theme-color" content="#e9ecef">
-
-    <!-- Include this to make the og:image larger -->
-    <!-- <meta name="twitter:card" content="summary_large_image"> -->
-</head>
-
-<body>
-    <div>
-        <nav class="navbar navbar-light navbar-expand-md sticky-top navigation-clean-button"
-            style="background-color:#37434d;color:#ffffff;">
-            <div class="container-fluid"><a class="navbar-brand" href="#">&nbsp;MoonL</a><button
-                    data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span
-                        class="visually-hidden">Toggle navigation</span><span
-                        class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navcol-1">
-                    <ul class="navbar-nav ms-auto" data-aos="slide-left">
-                        <li class="nav-item"><a class="nav-link active" style="color:#ffffff;" href="#"><i
-                                    class="fa fa-home"></i>&nbsp;Home</a></li>
-                        <li class="nav-item"><a class="nav-link" style="color:#ffffff;" href="/Portofolio"><i
-                                    class="fa fa-wpexplorer"></i>&nbsp;Portofolio</a></li>
-                        <li class="nav-item"><a class="nav-link" style="color:#ffffff;" href="/Me"><i
-                                    class="fa fa-user-circle-o"></i>&nbsp;Me</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div>
-    <div class="content-wrapper" data-aos="slide-up" data-aos-duration="1500">
-        <div class="container" style="margin-top: 5rem; position: relative;">
-            <span class="text1">Welcome</span>
-        </div>
-        <div class="container center" style="margin-bottom: 5rem;">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1 class="text-center">Move To</h1>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title">Portofolio</h4>
-                            <h6 class="text-muted card-subtitle mb-2">Place to see My Projects and stuff</h6><a
-                                class="btn btn-primary" href="./Portofolio">Link</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title">About Me</h4>
-                            <h6 class="text-muted card-subtitle mb-2">About me...</h6><a class="btn btn-primary"
-                                href="./Me">Link</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title">Contact Me</h4>
-                            <h6 class="text-muted card-subtitle mb-2">See Where To Contact me</h6><a class="btn btn-primary"
-                                href="./Me/Contact">Link</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/aos.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoonL/Tsukari</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        AOS.init();
-        AOS.refresh();
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'pulse-3': 'pulse 0.3s',
+                    }
+                }
+            }
+        }
     </script>
-</body>
+    <link rel="stylesheet" href="./assets/stylesheets/css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.15.1/dist/full.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div id="nav">
+        <div class="navbar bg-base-100">
+            <div class="navbar-start">
+              <div class="dropdown">
+                <label tabindex="0" class="btn btn-ghost lg:hidden">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                </label>
+                <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                  <li><a>Item 1</a></li>
+                  <li><a>Item 3</a></li>
+                </ul>
+              </div>
+              <a class="btn btn-ghost normal-case text-xl animate-pulse" id="NavBrand">MoonL</a>
+            </div>
+            <div class="navbar-end hidden lg:flex">
+              <ul class="menu menu-horizontal p-0">
+                <li><a>Item 1</a></li>
+                <li><a>Item 3</a></li>
+              </ul>
+            </div>
+        </div>
+    </div>
+    <div id="content-wrapper">
+        <section class="text-center pt-5">
+            <img id="GHAvatar" class="rounded-full animate-pulse-3 mx-auto w-72">
+            <div class="container pt-3 text-2xl font-sans m-auto">
+                <p>Hello! I am <strong>MoonL</strong>. <br> A Weeb that Love code<br></p>
+            </div>
+        </section>
 
+        <section class="text-center pt-10">
+            <a class="lg:text-4xl md:text-3xl text-2xl font-bold">Github Repositories</a>
+            <div class="divider w-3/6 m-auto"></div>
+            <div class="mx-auto pb-5" id="PlaceholderRepo">
+            </div>
+            <div id="repos" class="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-y-4">
+            
+            </div>
+        </section>
+    </div>
+</body>
+    <footer>
+        <script src="./assets/javascripts/index.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/geopattern/1.2.3/js/geopattern.min.js"></script>
+    </footer>
 </html>
