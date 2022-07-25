@@ -35,6 +35,7 @@ async function getRepos() {
             </div>
             <div class="card-actions pb-5 text-center mx-auto">
                 <button class="btn btn-primary justify-end tooltip" data-tip="Star:${repo.stargazers_count}\nForks:${repo.forks_count}">Information</button>
+                <a class="btn btn-primary justify-end" href="https://github.com/${repo.full_name}">Open</a>
             </div>
         </div>
     `
