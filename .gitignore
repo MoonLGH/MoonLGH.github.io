@@ -2,4 +2,4 @@
 .cache/
 dist/
 node_modules
-**.lock
+**-lock.json
