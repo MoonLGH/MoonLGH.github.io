@@ -4,10 +4,10 @@
     "dev": "parcel src/*.html",
     "build": "parcel build src/*.html"
   },
-  "devDependencies": {},
   "dependencies": {
     "autoprefixer": "^10.4.7",
     "daisyui": "^2.15.1",
+    "flowbite": "^1.5.1",
     "parcel": "^2.6.0",
     "postcss": "^8.4.14",
     "postcss-purgecss": "^2.0.3",

@@ -1,0 +1,10 @@
+/* purgecss start ignore */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* purgecss end ignore */
+
+.card-tools {
+    height: auto;
+    margin-top: 3rem;
+}
