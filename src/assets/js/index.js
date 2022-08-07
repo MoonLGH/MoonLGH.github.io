@@ -17,17 +17,22 @@ async function get(name) {
 
 get("MoonLGH")
 
+let selectedRepo = ["TcukawiWa","Tsukari-Bot","nHentParser","BeatmapDownloader","MoonLGH.github.io"] 
 async function getRepos() {
     const res = await fetch(`https://api.github.com/users/MoonLGH/repos?per_page=100`)
     let data = await res.json()
     let i = 0
     data = data.sort((a,b) => b.stargazers_count - a.stargazers_count)
+    if(selectedRepo.length > 1) {
+        data = data.filter(r => selectedRepo.includes(r.name))
+        // hiding the show more
+    }
     console.log(data)
     for (let repo of data){
         i++
         let repoDescription = repo.description ? parseDesc(repo.description) : "No Description Specified";
         let text = `
-        <div class="card w-64 ${i > 10 ? "hidden" : ""} overflow-visible bg-base-100 text-white shadow-xl place-self-center h-52 ${repo.fork ? "indicator" : ""}" style='background-image:${GeoPattern.generate(repo.name).toDataUrl()}'>
+        <div class="card w-64 ${i > 10 ? "hidden" : ""} overflow-visible text-white shadow-xl bg-gray-800 place-self-center h-52 ${repo.fork ? "indicator" : ""}">
             ${repo.fork ? '<span class="indicator-item badge badge-primary">Forked</span>' : ""}
             <div class="card-body flex-none my-auto">
                 <h2 class="card-title mx-auto">${parseDesc(repo.name)}</h2>
@@ -41,7 +46,9 @@ async function getRepos() {
     `
     document.querySelector("#repos").innerHTML += text
     }
-    MakeToggleButton()
+    if(data.length >= 10){
+        MakeToggleButton()
+    }
 }
 getRepos()
 
@@ -77,3 +84,23 @@ function TogRepo() {
         })
     }
 }
+
+// const scrollPage = new ScrollPage("#content-wrapper",{
+//     pages:{
+// 	    //for page 1
+//         1:{
+//             animation:"easeInQuart",
+//             time:1000
+//         },
+//         //for page 2
+//         2:{
+//             animation:"easeOutQuint",
+//             time:500
+//         },
+//         //for page 3
+//         3:{
+//             animation:"easeOutCubic",
+//             time:700
+//         }
+//     }
+// }); 

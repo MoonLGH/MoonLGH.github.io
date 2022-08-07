@@ -5,6 +5,15 @@
 /* purgecss end ignore */
 
 .card-tools {
-    height: auto;
+    height: 350px;
     margin-top: 3rem;
+}
+
+section {
+    width: 100%;
+}
+
+.card-tools > div {
+    margin-bottom: auto;
+    margin-top: auto;
 }
