@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,27 +9,33 @@
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="./assets/css/flags.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-    
+
     <script src="./assets/js/index.js" defer></script>
 </head>
+
 <body>
     <div id="nav">
         <div class="navbar bg-base-100">
             <div class="navbar-start">
-              <div class="dropdown">
-                <label tabindex="0" class="btn btn-ghost lg:hidden">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-                </label>
-                <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                  <li><a href="#portofolio">Portofolio</a></li>
-                </ul>
-              </div>
-              <a class="btn btn-ghost normal-case text-xl animate-pulse" id="NavBrand">MoonL</a>
+                <div class="dropdown">
+                    <label tabindex="0" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                    </label>
+                    <ul tabindex="0"
+                        class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                        <li><a href="#portofolio">Portofolio</a></li>
+                    </ul>
+                </div>
+                <a class="btn btn-ghost normal-case text-xl animate-pulse" id="NavBrand">MoonL</a>
             </div>
             <div class="navbar-end hidden lg:flex">
-              <ul class="menu menu-horizontal p-0">
-                  <li><a href="#portofolio">Portofolio</a></li>
-              </ul>
+                <ul class="menu menu-horizontal p-0">
+                    <li><a href="#portofolio">Portofolio</a></li>
+                </ul>
             </div>
         </div>
     </div>
@@ -45,7 +52,7 @@
             <div class="mx-auto pb-5" id="PlaceholderRepo">
             </div>
             <div id="repos" class="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-y-4">
-            
+
             </div>
         </section>
         <section class="pt-10 text-center m-auto w-90">
@@ -57,7 +64,8 @@
                         <div class="text-center dark:text-white ">
                             <i class="devicon-github-plain colored mx-auto text-9xl"></i>
                             <h5 class="ml-2 text-xl mt-5 mb-2 font-medium">Github</h5>
-                            <p>Check my github profile <a href="https://github.com/MoonLGH" class="font-bold text-sky-400">Here</a></p>
+                            <p>Check my github profile <a href="https://github.com/MoonLGH"
+                                    class="font-bold text-sky-400">Here</a></p>
                         </div>
                     </div>
                 </div>
@@ -198,34 +206,84 @@
                         <div class="text-center dark:text-white ">
                             <i class="fi fi-jp rounded-lg mx-auto text-9xl shadow-2xl"></i>
                             <h5 class="ml-2 text-xl mt-5 mb-2 font-medium">Japanese</h5>
-                            <p>i've been learning japanese since Early 2020, im planning to get JLPT N4/N3 Certificates in a year or two</p>
+                            <p>i've been learning japanese since Early 2020, im planning to get JLPT N4/N3 Certificates
+                                in a year or two</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         <section class="text-center pt-5">
-            <h1 class="lg:text-4xl md:text-3xl text-2xl font-bold">Certification</h1>
-            <div class="container pt-3 text-2xl text-center mx-auto">
+            <h1 class="lg:text-4xl md:text-3xl text-2xl font-bold">Achievements</h1>
+            <!-- <div class="container pt-3 text-2xl text-center mx-auto">
                 <div class="container  items-center place-content-center">
-                    <img class="mx-auto w-3/4" src="./assets/img/JSCertFCC.png">
-                    <h5 class="ml-2 text-xl mt-5 mb-2 font-medium">FreeCodeCamp JS Algorithm</h5>
+                    <spaw class="ml-2 text-xl mt-5 mb-2 font-medium">Hacktoberfest 2022 Compelition (10/20)</span>
+                    <img class="mx-auto w-3/4 rounded-xl" src="./assets/img/Hacktoberfest2022.png">
+                </div>
+            </div> -->
+            <div id="achieve" class="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 !h-auto">
+                <div class="w-3/4 px-2 mx-auto">
+                    <div class="card card-tools !h-auto shadow-2xl rounded-lg px-5 py-5 mb-2">
+                        <div class="text-center dark:text-white ">
+                            <span class="ml-2 text-xl mt-5 mb-2 font-medium">FreeCodeCamp JS Algorithm</span>
+                            <img class="mx-auto w-3/4 rounded-xl" src="./assets/img/JSCertFCC.png">
+                        </div>
+                        <div class="card-actions text-center mx-auto">
+                            <button class="btn btn-primary justify-end tooltip whitespace-pre-wrap"
+                            data-tip="Type: Programming Certificates&#xa;Organiser: Freecodecamp">Information</button>
+                            <a class="btn btn-primary justify-end" href="https://www.freecodecamp.org/certification/MoonL/javascript-algorithms-and-data-structures">Proof</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-3/4 px-2 mx-auto">
+                    <div class="card card-tools !h-auto shadow-2xl rounded-lg px-5 py-5 mb-2">
+                        <div class="text-center dark:text-white ">
+                            <div class="container  items-center place-content-center">
+                                <spaw class="ml-2 text-xl mt-5 mb-2 font-medium">Hacktoberfest 2022 Compelition
+                                    (Day:20)</span>
+                                    <img class="mx-auto rounded-xl" src="./assets/img/Hacktoberfest2022.jpg">
+                            </div>
+                        </div>
+                        <div class="card-actions text-center mx-auto">
+                            <button class="btn btn-primary justify-end tooltip whitespace-pre-wrap"
+                            data-tip="Type: Programming Event&#xa;Event organiser: DigitalOcean, Appwrite, Docker">Information</button>
+                            <a class="btn btn-primary justify-end" href="https://dev.to/MoonLGH">Dev.to Badge</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-3/4 px-2 mx-auto">
+                    <div class="card card-tools !h-auto shadow-2xl rounded-lg px-5 py-5 mb-2">
+                        <div class="text-center dark:text-white ">
+                            <div class="container items-center place-content-center">
+                                <spaw class="ml-2 text-xl mt-5 mb-2 font-medium">Nihongo Nouryoku(Placement 116/217) AGBJI(ft
+                                    Japan Foundation) Olimpiade Bahasa Jepang II 2022</span>
+                                    <img class="mx-auto rounded-xl" src="./assets/img/AGBJI.png">
+                            </div>
+                        </div>
+                        <div class="card-actions text-center mx-auto">
+                            <button class="btn btn-primary justify-end tooltip whitespace-pre-wrap"
+                            data-tip="Type: Japanese Language Olympics N5&#xa;Event organiser: AGBJI(Asosiasi Guru Bahasa Jepang Indonesia) & Japan foundation">Information</button>
+                            <a class="btn btn-primary justify-end" href="./assets/img/ProofAGBJI.png">Proof</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </div>
 </body>
-    <!-- needed so purgeCSS not remove their styles from the css file on production (because the element pushed from the js dom)  -->
-    <placeholder class="hidden">
-        <div class="card w-64 overflow-visible bg-gray-800 text-white shadow-xl place-self-center h-52 indicator">
-          <span class="indicator-item badge badge-primary">Forked</span>
-          <div class="card-body flex-none my-auto">
-              <h2 class="card-title mx-auto">Placeholder</h2>
-              <p>placeholder</p>
-          </div>
-          <div class="card-actions pb-5 text-center mx-auto">
-              <button class="btn btn-primary justify-end tooltip" data-tip="Star:${repo.stargazers_count}\nForks:${repo.forks_count}">Information</button>
-          </div>
-      </div>
-    </placeholder>
+<!-- needed so purgeCSS not remove their styles from the css file on production (because the element pushed from the js dom)  -->
+<placeholder class="hidden">
+    <div class="card w-64 overflow-visible bg-gray-800 text-white shadow-xl place-self-center h-52 indicator">
+        <span class="indicator-item badge badge-primary">Forked</span>
+        <div class="card-body flex-none my-auto">
+            <h2 class="card-title mx-auto">Placeholder</h2>
+            <p>placeholder</p>
+        </div>
+        <div class="card-actions pb-5 text-center mx-auto">
+            <button class="btn btn-primary justify-end tooltip"
+                data-tip="Star:${repo.stargazers_count}\nForks:${repo.forks_count}">Information</button>
+        </div>
+    </div>
+</placeholder>
+
 </html>

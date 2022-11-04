@@ -32,7 +32,7 @@ async function getRepos() {
         i++
         let repoDescription = repo.description ? parseDesc(repo.description) : "No Description Specified";
         let text = `
-        <div class="card w-64 ${i > 10 ? "hidden" : ""} overflow-visible text-white shadow-xl bg-gray-800 place-self-center h-52 ${repo.fork ? "indicator" : ""}">
+        <div class="card w-64 ${i > 10 ? "hidden" : ""} overflow-visible dark:text-white shadow-xl dark:bg-gray-800 place-self-center h-52 ${repo.fork ? "indicator" : ""}">
             ${repo.fork ? '<span class="indicator-item badge badge-primary">Forked</span>' : ""}
             <div class="card-body flex-none my-auto">
                 <h2 class="card-title mx-auto">${parseDesc(repo.name)}</h2>
