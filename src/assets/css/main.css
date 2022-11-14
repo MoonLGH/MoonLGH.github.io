@@ -4,6 +4,13 @@
 @tailwind utilities;
 /* purgecss end ignore */
 
+
+.tooltip:hover::before, .tooltip:hover::before, .tooltip:hover::after {
+    opacity: 1;
+    transition-delay: 75ms;
+    text-transform: none!important;
+  }
+
 .card-tools {
     height: 350px;
     margin-top: 3rem;

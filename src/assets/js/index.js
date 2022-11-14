@@ -17,10 +17,24 @@ async function get(name) {
 
 get("MoonLGH")
 
-let selectedRepo = ["TcukawiWa","Tsukari-Bot","nHentParser","BeatmapDownloader","MoonLGH.github.io"] 
+let selectedRepo = ["TcukawiWa","Tsukari-Bot","nHentParser","BeatmapDownloader","MoonLGH.github.io","nekoWrap","RPLSaci.github.io"]
+let more = [{
+    name:"RPLSaci/RPLSaci.github.io",
+    additional:"This website is my extraculicular website, which being used as the school official extraculicular website"
+}]
 async function getRepos() {
-    const res = await fetch(`https://api.github.com/users/MoonLGH/repos?per_page=100`)
+    const res = await fetch(`https://api.github.com/users/MoonLGH/repos?per_page=200`)
     let data = await res.json()
+    const res2 = await fetch(`https://api.github.com/users/MoonLGH/repos?page=2&per_page=200`)
+    let data2 = await res2.json()
+
+    for (let i = 0; i < more.length; i++) {
+        const element = more[i];
+        let result = await fetch(`https://api.github.com/repos/${element.name}`)
+        data.push((await result.json()))
+    }
+    data = [...data,...data2]
+    console.log(data)
     let i = 0
     data = data.sort((a,b) => b.stargazers_count - a.stargazers_count)
     if(selectedRepo.length > 1) {
@@ -39,7 +53,7 @@ async function getRepos() {
                 <p>${repoDescription}</p>
             </div>
             <div class="card-actions pb-5 text-center mx-auto">
-                <button class="btn btn-primary justify-end tooltip" data-tip="Star:${repo.stargazers_count}\nForks:${repo.forks_count}">Information</button>
+                <button class="btn btn-primary justify-end tooltip" data-tip="Star:${repo.stargazers_count}&#xa;Forks:${repo.forks_count}&#xa;${more.find(a => a.name === repo.full_name) ? `Infomation: ${more.find(a => a.name === repo.full_name).additional}` : ""}">Information</button>
                 <a class="btn btn-primary justify-end" href="https://github.com/${repo.full_name}">Open</a>
             </div>
         </div>
