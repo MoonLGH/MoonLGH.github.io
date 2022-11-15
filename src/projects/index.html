@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoonL/Tsukari</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+
+    <script src="../assets/js/index.js" defer></script>
+</head>
+
+<body>
+    <div id="nav">
+        <div class="navbar bg-base-100">
+            <div class="navbar-start">
+                <div class="dropdown">
+                    <label tabindex="0" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                    </label>
+                    <ul tabindex="0"
+                        class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                        <li><a href="../index.html">Portofolio</a></li>
+                        <li><a href=".">Projects</a></li>
+                    </ul>
+                </div>
+                <a class="btn btn-ghost normal-case text-xl animate-pulse" id="NavBrand">MoonL</a>
+            </div>
+            <div class="navbar-end hidden lg:flex">
+                <ul class="menu menu-horizontal p-0">
+                    <li><a href="../index.html">Portofolio</a></li>
+                    <li><a href=".">Projects</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="content-wrapper">
+        <section class="text-center pt-10">
+            <h1 class="lg:text-4xl md:text-3xl text-2xl font-bold">Pinned GitHub Project</h1>
+            <div class="divider w-3/6 m-auto"></div>
+            <div class="mx-auto pb-5" id="PlaceholderRepo">
+            </div>
+            <div id="repos" class="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-y-4">
+
+            </div>
+        </section>
+    </div>
+</body>
+<!-- needed so purgeCSS not remove their styles from the css file on production (because the element pushed from the js dom)  -->
+<placeholder class="hidden">
+    <div class="card w-64 mt-9 overflow-visible bg-gray-800 text-white shadow-xl place-self-center h-52 indicator">
+        <span class="indicator-item badge badge-primary">Forked</span>
+        <div class="card-body flex-none my-auto">
+            <h2 class="card-title mx-auto">Placeholder</h2>
+            <p>placeholder</p>
+        </div>
+        <div class="card-actions pb-5 text-center mx-auto">
+            <button class="btn btn-primary justify-end tooltip"
+                data-tip="Star:${repo.stargazers_count}\nForks:${repo.forks_count}">Information</button>
+        </div>
+    </div>
+</placeholder>
+
+</html>

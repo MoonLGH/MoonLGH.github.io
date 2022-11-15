@@ -11,16 +11,19 @@ setInterval(() => {
 async function get(name) {
     const res = await fetch(`https://api.github.com/users/${name}`)
     const data = await res.json()
-    document.getElementById("GHAvatar").src = data.avatar_url
+    const el = document.getElementById("GHAvatar")
+    if (el) {
+        el.src = data.avatar_url
+    }
     console.log(data.avatar_url)
 }
 
 get("MoonLGH")
 
-let selectedRepo = ["TcukawiWa","Tsukari-Bot","nHentParser","BeatmapDownloader","MoonLGH.github.io","nekoWrap","RPLSaci.github.io"]
+let selectedRepo = ["TcukawiWa", "Tsukari-Bot", "nHentParser", "BeatmapDownloader", "MoonLGH.github.io", "nekoWrap", "RPLSaci.github.io"]
 let more = [{
-    name:"RPLSaci/RPLSaci.github.io",
-    additional:"This website is my extraculicular website, which being used as the school official extraculicular website"
+    name: "RPLSaci/RPLSaci.github.io",
+    additional: "This website is my extraculicular website, which being used as the school official extraculicular website"
 }]
 async function getRepos() {
     const res = await fetch(`https://api.github.com/users/MoonLGH/repos?per_page=200`)
@@ -33,20 +36,20 @@ async function getRepos() {
         let result = await fetch(`https://api.github.com/repos/${element.name}`)
         data.push((await result.json()))
     }
-    data = [...data,...data2]
+    data = [...data, ...data2]
     console.log(data)
     let i = 0
-    data = data.sort((a,b) => b.stargazers_count - a.stargazers_count)
-    if(selectedRepo.length > 1) {
+    data = data.sort((a, b) => b.stargazers_count - a.stargazers_count)
+    if (selectedRepo.length > 1) {
         data = data.filter(r => selectedRepo.includes(r.name))
         // hiding the show more
     }
     console.log(data)
-    for (let repo of data){
+    for (let repo of data) {
         i++
         let repoDescription = repo.description ? parseDesc(repo.description) : "No Description Specified";
         let text = `
-        <div class="card w-64 ${i > 10 ? "hidden" : ""} overflow-visible dark:text-white shadow-xl dark:bg-gray-800 place-self-center h-52 ${repo.fork ? "indicator" : ""}">
+        <div class="card w-64 ${i > 10 ? "hidden" : ""} mt-9 overflow-visible dark:text-white shadow-xl dark:bg-gray-800 place-self-center h-52 ${repo.fork ? "indicator" : ""}">
             ${repo.fork ? '<span class="indicator-item badge badge-primary">Forked</span>' : ""}
             <div class="card-body flex-none my-auto">
                 <h2 class="card-title mx-auto">${parseDesc(repo.name)}</h2>
@@ -58,40 +61,46 @@ async function getRepos() {
             </div>
         </div>
     `
-    document.querySelector("#repos").innerHTML += text
-    }
-    if(data.length >= 10){
-        MakeToggleButton()
+        const el = document.querySelector("#repos")
+        if (el) {
+            el.innerHTML += text
+        }
+        if (data.length >= 10) {
+            MakeToggleButton()
+        }
     }
 }
 getRepos()
 
-function parseDesc(text){
-    if(text.length >= 20) {
-        return text.substr(0,20) + "..."
+function parseDesc(text) {
+    if (text.length >= 20) {
+        return text.substr(0, 20) + "..."
     }
     return text
 }
 
-function MakeToggleButton(){
+function MakeToggleButton() {
     let button = document.createElement("button")
-    button.classList.add(...["btn","btn-primary"])
-    button.setAttribute("id","ToggleRepo")
+    button.classList.add(...["btn", "btn-primary"])
+    button.setAttribute("id", "ToggleRepo")
     button.innerText = "Show More"
-    button.setAttribute("onclick","TogRepo()")
-    document.getElementById("PlaceholderRepo").appendChild(button)
+    button.setAttribute("onclick", "TogRepo()")
+    const repo = document.getElementById("PlaceholderRepo")
+    if (repo) {
+        repo.appendChild(button)
+    }
 }
 
 function TogRepo() {
     let btn = document.querySelector("#ToggleRepo")
-    if(btn.innerText === "SHOW MORE"){
-        document.querySelectorAll("#repos > div.hidden").forEach((el)=>{
+    if (btn.innerText === "SHOW MORE") {
+        document.querySelectorAll("#repos > div.hidden").forEach((el) => {
             el.classList.remove("hidden")
             el.classList.add("hiddenToggled")
             btn.innerText = "Show Less"
         })
-    }else {
-        document.querySelectorAll("#repos > div.hiddenToggled").forEach((el)=>{
+    } else {
+        document.querySelectorAll("#repos > div.hiddenToggled").forEach((el) => {
             el.classList.add("hidden")
             el.classList.remove("hiddenToggled")
             btn.innerText = "Show More"
