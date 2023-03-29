@@ -1,4 +1,5 @@
 let Brand = document.getElementById("NavBrand")
+AOS.init();
 
 setInterval(() => {
     if (Brand.textContent === "MoonL") {
