@@ -5,6 +5,10 @@
 /* purgecss end ignore */
 
 
+.top-land {
+    font-family: 'Inter', sans-serif;
+}
+
 .tooltip:hover::before, .tooltip:hover::before, .tooltip:hover::after {
     opacity: 1;
     transition-delay: 75ms;
