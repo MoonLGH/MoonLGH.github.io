@@ -1,4 +1,5 @@
 let Brand = document.getElementById("NavBrand")
+
 AOS.init();
 
 setInterval(() => {
@@ -26,6 +27,7 @@ let more = [{
     name: "RPLSaci/RPLSaci.github.io",
     additional: "This website is my extraculicular website, which being used as the school official extraculicular website"
 }]
+
 async function getRepos() {
     const res = await fetch(`https://api.github.com/users/MoonLGH/repos?per_page=200`)
     let data = await res.json()
@@ -50,10 +52,10 @@ async function getRepos() {
         i++
         let repoDescription = repo.description ? parseDesc(repo.description) : "No Description Specified";
         let text = `
-        <div class="card w-64 ${i > 10 ? "hidden" : ""} mt-9 overflow-visible dark:text-white shadow-xl dark:bg-gray-800 place-self-center h-52 ${repo.fork ? "indicator" : ""}">
+        <div class="card w-64 ${i > 10 ? "hidden" : ""} mt-9 overflow-visible shadow-xl dark:bg-gray-800 place-self-center h-52 ${repo.fork ? "indicator" : ""}">
             ${repo.fork ? '<span class="indicator-item badge badge-primary">Forked</span>' : ""}
             <div class="card-body flex-none my-auto">
-                <h2 class="card-title mx-auto">${parseDesc(repo.name)}</h2>
+                <h2 class="card-title mx-auto dark:text-white">${parseDesc(repo.name)}</h2>
                 <p>${repoDescription}</p>
             </div>
             <div class="card-actions pb-5 text-center mx-auto">

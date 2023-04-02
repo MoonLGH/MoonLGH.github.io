@@ -9,6 +9,10 @@
     font-family: 'Inter', sans-serif;
 }
 
+.card-actions > .btn {
+    @apply bg-purple-500 text-white border-purple-600;
+}
+
 .tooltip:hover::before, .tooltip:hover::before, .tooltip:hover::after {
     opacity: 1;
     transition-delay: 75ms;

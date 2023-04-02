@@ -8,13 +8,14 @@
     <title>MoonL/Tsukari</title>
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
     <script src="../assets/js/index.js" defer></script>
 </head>
 
 <body>
     <div id="nav">
-        <div class="navbar bg-base-100">
+        <div class="navbar z-50 fixed bg-base-100">
             <div class="navbar-start">
                 <div class="dropdown">
                     <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -40,10 +41,11 @@
             </div>
         </div>
     </div>
-    <div id="content-wrapper">
-        <section class="text-center pt-10">
-            <h1 class="lg:text-4xl md:text-3xl text-2xl font-bold">Pinned GitHub Project</h1>
+    <div id="content-wrapper" class="p-16">
+        <section class="text-center pt-10 min-h-screen">
+            <h1 class="lg:text-4xl md:text-3xl text-2xl font-bold dark:text-white">Pinned Github Project</h1>
             <div class="divider w-3/6 m-auto"></div>
+            <h2 class="font-light">This projects are the projects that i worked on and proud of</h2>
             <div class="mx-auto pb-5" id="PlaceholderRepo">
             </div>
             <div id="repos" class="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-y-4">
