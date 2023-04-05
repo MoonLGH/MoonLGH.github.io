@@ -22,58 +22,87 @@ async function get(name) {
 
 get("MoonLGH")
 
-let selectedRepo = ["TcukawiWa", "Tsukari-Bot", "nHentParser", "BeatmapDownloader", "MoonLGH.github.io", "nekoWrap", "RPLSaci.github.io"]
-let more = [{
-    name: "RPLSaci/RPLSaci.github.io",
-    additional: "This website is my extraculicular website, which being used as the school official extraculicular website"
-}]
-
 async function getRepos() {
-    const res = await fetch(`https://api.github.com/users/MoonLGH/repos?per_page=200`)
-    let data = await res.json()
-    const res2 = await fetch(`https://api.github.com/users/MoonLGH/repos?page=2&per_page=200`)
-    let data2 = await res2.json()
+    const res = await fetch(`https://raw.githubusercontent.com/MoonLGH/portfolio-assets/output/data.json`);
+    const { projects, "fcc-front-end": fccFrontEnd } = await res.json();
+    const repos = [...projects, ...fccFrontEnd].map((repo) => {
+      return {
+        ...repo,
+        name: repo.repo.split("/")[1],
+        full_name: repo.repo,
+        stargazers_count: null,
+        forks_count: null,
+        fork: false,
+      };
+    });
+  
+    for (let i = 0; i < repos.length; i++) {
+      const repo = repos[i];
+      const result = await fetch(`https://api.github.com/repos/${repo.full_name}`);
+      const data = await result.json();
+      repos[i] = {
+        ...repo,
+        stargazers_count: data.stargazers_count,
+        forks_count: data.forks_count,
+        fork: data.fork,
+      };
+    }
+  
+    const reposHtml = repos
+      .sort((a, b) => b.stargazers_count - a.stargazers_count)
+      .map((repo, index) => {
+        // const repoDescription = repo.description ? parseDesc(repo.description) : "No Description Specified";
+        // const text = `
+        //   <div class="card w-64 ${index > 9 ? "hidden" : ""} mt-9 overflow-visible shadow-xl dark:bg-gray-800 place-self-center h-52 ${repo.fork ? "indicator" : ""}">
+        //     ${repo.fork ? '<span class="indicator-item badge badge-primary">Forked</span>' : ""}
+        //     <div class="card-body flex-none my-auto">
+        //       <h2 class="card-title mx-auto dark:text-white">${parseDesc(repo.name)}</h2>
+        //       <p>${repoDescription}</p>
+        //     </div>
+        //     <div class="card-actions pb-5 text-center mx-auto">
+        //       <button class="btn btn-primary justify-end tooltip" data-tip="Star:${repo.stargazers_count}&#xa;Forks:${repo.forks_count}">Information</button>
+        //       <a class="btn btn-primary justify-end" href="https://github.com/${repo.full_name}">Open</a>
+        //     </div>
+        //   </div>
+        // `;
+        let tech = []
+        if(repo.tech.find((arr) => arr.toLowerCase().includes("show"))){
+            tech = repo.tech.filter((arr) => arr.toLowerCase().includes("show"))
+            tech = tech.map((arr) => arr.toLowerCase().replace("-show",""))
+            tech = tech.join(",")
+        } else {
+            tech = repo.tech.join(",")
+        }
 
-    for (let i = 0; i < more.length; i++) {
-        const element = more[i];
-        let result = await fetch(`https://api.github.com/repos/${element.name}`)
-        data.push((await result.json()))
-    }
-    data = [...data, ...data2]
-    console.log(data)
-    let i = 0
-    data = data.sort((a, b) => b.stargazers_count - a.stargazers_count)
-    if (selectedRepo.length > 1) {
-        data = data.filter(r => selectedRepo.includes(r.name))
-        // hiding the show more
-    }
-    console.log(data)
-    for (let repo of data) {
-        i++
-        let repoDescription = repo.description ? parseDesc(repo.description) : "No Description Specified";
-        let text = `
-        <div class="card w-64 ${i > 10 ? "hidden" : ""} mt-9 overflow-visible shadow-xl dark:bg-gray-800 place-self-center h-52 ${repo.fork ? "indicator" : ""}">
-            ${repo.fork ? '<span class="indicator-item badge badge-primary">Forked</span>' : ""}
-            <div class="card-body flex-none my-auto">
-                <h2 class="card-title mx-auto dark:text-white">${parseDesc(repo.name)}</h2>
-                <p>${repoDescription}</p>
+        const text = `
+            <div>
+                <a aria-label="Single Project">
+                    <div class="rounded-xl shadow-lg hover:shadow-xl cursor-pointer mb-10 sm:mb-0 bg-secondary-light dark:bg-ternary-dark">
+                        <div><img class="rounded-t-xl border-none" src="https://raw.githubusercontent.com/MoonLGH/portfolio-assets/output/${repo.path}" /></div>
+                        <div class="text-center px-4 py-6">
+                            <p class="font-general-medium text-lg md:text-xl text-ternary-dark dark:text-ternary-light mb-2">${repo.full_name}</p><span class="text-lg text-ternary-dark dark:text-ternary-light">${tech}</span>
+                        </div>
+                    </div>
+                </a>
             </div>
-            <div class="card-actions pb-5 text-center mx-auto">
-                <button class="btn btn-primary justify-end tooltip" data-tip="Star:${repo.stargazers_count}&#xa;Forks:${repo.forks_count}&#xa;${more.find(a => a.name === repo.full_name) ? `Infomation: ${more.find(a => a.name === repo.full_name).additional}` : ""}">Information</button>
-                <a class="btn btn-primary justify-end" href="https://github.com/${repo.full_name}">Open</a>
-            </div>
-        </div>
-    `
-        const el = document.querySelector("#repos")
-        if (el) {
-            el.innerHTML += text
-        }
-        if (data.length >= 10) {
-            MakeToggleButton()
-        }
+        `;
+
+        return text;
+      })
+      .join("");
+  
+    const el = document.querySelector("#repos");
+    if (el) {
+      el.innerHTML = reposHtml;
     }
-}
-getRepos()
+  
+    if (repos.length > 10) {
+      MakeToggleButton();
+    }
+  }
+  
+  getRepos();
+  
 
 function parseDesc(text) {
     if (text.length >= 20) {
