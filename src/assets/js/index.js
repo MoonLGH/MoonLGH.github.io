@@ -25,7 +25,7 @@ get("MoonLGH")
 async function getRepos() {
     const res = await fetch(`https://raw.githubusercontent.com/MoonLGH/portfolio-assets/output/data.json`);
     const { projects, "fcc-front-end": fccFrontEnd } = await res.json();
-    const repos = [...projects, ...fccFrontEnd].map((repo) => {
+    const repos = [...projects].map((repo) => {
       return {
         ...repo,
         name: repo.repo.split("/")[1],
@@ -74,16 +74,26 @@ async function getRepos() {
             tech = repo.tech.join(",")
         }
 
+        let optional = ``
+
+        if (repo.url) {
+            optional = `<a class="btn btn-primary justify-end normal-case" href="${repo.url}">Open</a>`
+        }
+
+            optional += `<a class="btn btn-primary justify-end normal-case" href="https://github.com/${repo.full_name}">Open Repo</a>`
         const text = `
             <div>
-                <a aria-label="Single Project">
-                    <div class="rounded-xl shadow-lg hover:shadow-xl cursor-pointer mb-10 sm:mb-0 bg-secondary-light dark:bg-ternary-dark">
+                    <div class="rounded-xl shadow-lg hover:shadow-xl cursor-pointer mb-10 sm:mb-0 bg-secondary-light dark:bg-ternary-dark pb-8">
                         <div><img class="rounded-t-xl border-none" src="https://raw.githubusercontent.com/MoonLGH/portfolio-assets/output/${repo.path}" /></div>
                         <div class="text-center px-4 py-6">
                             <p class="font-general-medium text-lg md:text-xl text-ternary-dark dark:text-ternary-light mb-2">${repo.full_name}</p><span class="text-lg text-ternary-dark dark:text-ternary-light">${tech}</span>
                         </div>
+                        <div class="card-actions pt-2 text-center mx-auto place-content-center">
+                            <button class="btn justify-end tooltip whitespace-pre-wrap w-min"
+                                data-tip="${repo.description}">Information</button>
+                            ${optional}
+                        </div>
                     </div>
-                </a>
             </div>
         `;
 
@@ -96,12 +106,101 @@ async function getRepos() {
       el.innerHTML = reposHtml;
     }
   
+    putFccFrontEnd(fccFrontEnd)
     if (repos.length > 10) {
       MakeToggleButton();
     }
   }
   
-  getRepos();
+
+async function putFccFrontEnd(frontend) {
+    frontend = frontend.map((repo) => {
+        return {
+            ...repo,
+            name: repo.repo.split("/")[1],
+            full_name: repo.repo,
+            stargazers_count: null,
+            forks_count: null,
+            fork: false,
+        };
+    }
+    );
+
+    for (let i = 0; i < frontend.length; i++) { 
+        const repo = frontend[i];
+        const result = await fetch(`https://api.github.com/repos/${repo.full_name}`);
+        const data = await result.json();
+        frontend[i] = {
+            ...repo,
+            stargazers_count: data.stargazers_count,
+            forks_count: data.forks_count,
+            fork: data.fork,
+        };
+    }
+    
+    const reposHtml = frontend
+      .sort((a, b) => b.stargazers_count - a.stargazers_count)
+      .map((repo, index) => {
+        // const repoDescription = repo.description ? parseDesc(repo.description) : "No Description Specified";
+        // const text = `
+        //   <div class="card w-64 ${index > 9 ? "hidden" : ""} mt-9 overflow-visible shadow-xl dark:bg-gray-800 place-self-center h-52 ${repo.fork ? "indicator" : ""}">
+        //     ${repo.fork ? '<span class="indicator-item badge badge-primary">Forked</span>' : ""}
+        //     <div class="card-body flex-none my-auto">
+        //       <h2 class="card-title mx-auto dark:text-white">${parseDesc(repo.name)}</h2>
+        //       <p>${repoDescription}</p>
+        //     </div>
+        //     <div class="card-actions pb-5 text-center mx-auto">
+        //       <button class="btn btn-primary justify-end tooltip" data-tip="Star:${repo.stargazers_count}&#xa;Forks:${repo.forks_count}">Information</button>
+        //       <a class="btn btn-primary justify-end" href="https://github.com/${repo.full_name}">Open</a>
+        //     </div>
+        //   </div>
+        // `;
+        let tech = []
+        if(repo.tech.find((arr) => arr.toLowerCase().includes("show"))){
+            tech = repo.tech.filter((arr) => arr.toLowerCase().includes("show"))
+            tech = tech.map((arr) => arr.toLowerCase().replace("-show",""))
+            tech = tech.join(",")
+        } else {
+            tech = repo.tech.join(",")
+        }
+
+        let optional = ``
+
+        if (repo.url) {
+            optional = `<a class="btn btn-primary justify-end normal-case" href="${repo.url}">Open</a>`
+        }
+
+            optional += `<a class="btn btn-primary justify-end normal-case" href="https://github.com/${repo.full_name}">Open Repo</a>`
+        const text = `
+            <div>
+                    <div class="rounded-xl shadow-lg hover:shadow-xl cursor-pointer mb-10 sm:mb-0 bg-secondary-light dark:bg-ternary-dark pb-8">
+                        <div><img class="rounded-t-xl border-none" src="https://raw.githubusercontent.com/MoonLGH/portfolio-assets/output/${repo.path}" /></div>
+                        <div class="text-center px-4 py-6">
+                            <p class="font-general-medium text-lg md:text-xl text-ternary-dark dark:text-ternary-light mb-2">${repo.full_name}</p><span class="text-lg text-ternary-dark dark:text-ternary-light">${tech}</span>
+                        </div>
+                        <div class="card-actions pt-2 text-center mx-auto place-content-center">
+                            <button class="btn justify-end tooltip whitespace-pre-wrap w-min"
+                                data-tip="${repo.description}">Information</button>
+                            ${optional}
+                        </div>
+                    </div>
+            </div>
+        `;
+
+        return text;
+      })
+      .join("");
+
+    const el = document.querySelector("#fccRepos");
+    if (el) {
+        el.innerHTML = reposHtml;
+        }
+
+
+
+}
+
+getRepos();
   
 
 function parseDesc(text) {

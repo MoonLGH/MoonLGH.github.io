@@ -51,6 +51,12 @@
             <div id="repos" class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-24">
 
             </div>
+
+            <br>
+            <h1 class="lg:text-3xl md:text-2xl text-xl font-bold dark:text-white">FreecodeCamp Projects</h1>
+            <div id="fccRepos" class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-24">
+
+            </div>
         </section>
     </div>
 </body>
@@ -95,7 +101,7 @@
     </div>
     <div>
         <a aria-label="Single Project">
-            <div class="rounded-xl shadow-lg hover:shadow-xl cursor-pointer mb-10 sm:mb-0 bg-secondary-light dark:bg-ternary-dark">
+            <div class="rounded-xl pb-8 shadow-lg hover:shadow-xl cursor-pointer mb-10 sm:mb-0 bg-secondary-light dark:bg-ternary-dark">
                 <div><img class="rounded-t-xl border-none" alt="Single Project"></div>
                 <div class="text-center px-4 py-6">
                     <p class="font-general-medium text-lg md:text-xl text-ternary-dark dark:text-ternary-light mb-2">
@@ -104,6 +110,12 @@
                 </div>
             </div>
         </a>
+        <div class="card-actions pt-2 text-center mx-auto place-content-center">
+            <button class="btn justify-end tooltip whitespace-pre-wrap w-min"
+                data-tip="${repo.description}">Description</button>
+            <a class="btn justify-end normal-case"
+                href="https://www.freecodecamp.org/certification/MoonL/front-end-development-libraries">View</a>
+        </div>
     </div>
 </placeholder>
 
