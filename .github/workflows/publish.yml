@@ -21,7 +21,7 @@ jobs:
     - name: Build
       run: npm run build --if-present
     - name: Create CNAME
-      run: echo "tcukawi.tech" > "dist/CNAME"
+      run: echo "tsukari.tech" > "dist/CNAME"
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
