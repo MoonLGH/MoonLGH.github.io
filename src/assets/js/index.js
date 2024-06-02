@@ -2,6 +2,10 @@ let Brand = document.getElementById("NavBrand")
 
 AOS.init();
 
+function minimenu(){
+    document.querySelector("#minibar").classList.toggle("hidden")
+}
+
 setInterval(() => {
     if (Brand.textContent === "MoonL") {
         Brand.textContent = "Tsukari"

@@ -13,34 +13,47 @@
     <script src="../assets/js/index.js" defer></script>
 </head>
 
-<body>
-    <div id="nav">
-        <div class="navbar z-50 fixed bg-base-100">
-            <div class="navbar-start">
-                <div class="dropdown">
-                    <label tabindex="0" class="btn btn-ghost lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h8m-8 6h16" />
-                        </svg>
-                    </label>
-                    <ul tabindex="0"
-                        class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href=".">Projects</a></li>
-                    </ul>
-                </div>
-                <a class="btn btn-ghost normal-case text-xl animate-pulse" id="NavBrand">MoonL</a>
-            </div>
-            <div class="navbar-end hidden lg:flex">
-                <ul class="menu menu-horizontal p-0">
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href=".">Projects</a></li>
-                </ul>
-            </div>
-        </div>
+<header
+    class="fixed w-[95%] bgop8 inset-x-0 top-4 z-40 mx-auto flex h-[60px] max-w-5xl items-center justify-between rounded-2xl px-8 shadow-sm saturate-100 backdrop-blur-[10px] transition-colors"
+    style="transform: none;">
+    <a class="flex items-center justify-center gap-1" href="/"><span class="sr-only">Homepage</span>MoonL</a>
+    <div class="flex items-center  gap-2">
+        <nav>
+            <ul class="hidden space-x-2 md:flex">
+                <li class="relative flex h-[60px] items-center justify-center"><a
+                        class="rounded px-3 py-2 text-sm font-medium transition-colors text-muted-foreground"
+                        href="/">Home</a></li>
+                <li class="relative flex h-[60px] items-center justify-center"><a
+                        class="rounded px-3 py-2 text-sm font-medium transition-colors text-muted-foreground"
+                        href="/projects">Projects</a></li>
+            </ul>
+        </nav>
+        <div data-orientation="vertical" role="none" class="shrink-0 bg-border w-px h-6"></div>
+        <button onclick="minimenu()"
+            class="whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:text-accent-foreground flex size-9 items-center justify-center p-0 md:hidden"
+            type="button" aria-label="Toggle menu" aria-haspopup="menu" aria-expanded="false"
+            data-state="closed"><span class="sr-only">Toggle menu</span><svg xmlns="http://www.w3.org/2000/svg"
+                width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu size-4">
+                <line x1="4" x2="20" y1="12" y2="12"></line>
+                <line x1="4" x2="20" y1="6" y2="6"></line>
+                <line x1="4" x2="20" y1="18" y2="18"></line>
+            </svg></button>
     </div>
+    <div id="minibar"
+        class="hidden backdrop-blur-[10px] right-0 z-50 mt-32 overflow-hidden absolute rounded-md border bg-popover p-1 text-popover-foreground shadow-md min-w-52"
+        style="outline: none; pointer-events: auto; opacity: 50%;">
+        <a class="place-content-center m-1.5 relative cursor-default select-none rounded-sm px-2 py-1.5 text-sm outline-none transition-colors  flex items-center gap-4"
+            href="/">
+            <div>Home</div>
+        </a>
+        <a class="place-content-center m-1.5 relative cursor-default select-none rounded-sm px-2 py-1.5 text-sm outline-none transition-colors  flex items-center gap-4"
+        href="/home">
+        <div>Projects</div>
+    </a></div>
+
+</header>
+<body>
     <div id="content-wrapper" class="p-16">
         <section class="text-center pt-10 min-h-screen">
             <h1 class="lg:text-4xl md:text-3xl text-2xl font-bold dark:text-white">Pinned Github Project</h1>

@@ -4,6 +4,15 @@
 @tailwind utilities;
 /* purgecss end ignore */
 
+.bgop8 {
+    background-color: hsl(0 0% 0%/ .35);
+}
+.bg-popover {
+    background-color: hsl(0 0% 10%);
+}
+.bg-background30 {
+    background-color: hsl(var(--background)/.3)
+}
 .animate-pulsepfp {
     animation: 10s cubic-bezier(.4, 0, .6, 1) infinite pulse;
 }
