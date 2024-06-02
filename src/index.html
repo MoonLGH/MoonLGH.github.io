@@ -17,6 +17,13 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
 
     <script src="./assets/js/index.js" defer></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <style>
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
 </head>
 
 
@@ -38,10 +45,10 @@
         <div data-orientation="vertical" role="none" class="shrink-0 bg-border w-px h-6"></div>
         <button onclick="minimenu()"
             class="whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:text-accent-foreground flex size-9 items-center justify-center p-0 md:hidden"
-            type="button" aria-label="Toggle menu" aria-haspopup="menu" aria-expanded="false"
-            data-state="closed"><span class="sr-only">Toggle menu</span><svg xmlns="http://www.w3.org/2000/svg"
-                width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu size-4">
+            type="button" aria-label="Toggle menu" aria-haspopup="menu" aria-expanded="false" data-state="closed"><span
+                class="sr-only">Toggle menu</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" class="lucide lucide-menu size-4">
                 <line x1="4" x2="20" y1="12" y2="12"></line>
                 <line x1="4" x2="20" y1="6" y2="6"></line>
                 <line x1="4" x2="20" y1="18" y2="18"></line>
@@ -55,9 +62,10 @@
             <div>Home</div>
         </a>
         <a class="place-content-center m-1.5 relative cursor-default select-none rounded-sm px-2 py-1.5 text-sm outline-none transition-colors  flex items-center gap-4"
-        href="/home">
-        <div>Projects</div>
-    </a></div>
+            href="/home">
+            <div>Projects</div>
+        </a>
+    </div>
 
 </header>
 
@@ -68,135 +76,155 @@
                 <img id="GHAvatar" class="rounded-lg animate-pulsepfp mx-auto w-72">
                 <div
                     class="container pt-3 text-6xl font-bold font-sans m-auto text-left mx-0 sm:mx-6 text-center sm:text-left">
-                    <h1 class="dark:text-white">Hey, Im <span class="text-purple-400">MoonL</span>!</h1>
-                    <h2 class="text-3xl font-light">Software Developer</h2>
+                    <h1 class="dark:text-white text-3xl">Hey, Im <br>
+                        <span class="text-purple-400 text-6xl">MoonL</span>!</h1>
+                    <h2 class="text-3xl font-light">Fullstack Developer</h2>
+                        <p class="mb-10 text-sm font-medium leading-relaxed">I make <span class="font-bold text-purple-400 text-dark">buttons</span> in <span class="font-bold text-dark text-purple-400">2 hours!</span></p>
                 </div>
             </div>
         </section>
-        <section class="pt-10 text-center m-auto w-90" data-aos="fade-up">
+
+        <section class="pt-10 text-center m-auto w-11/12  mb-12" data-aos="fade-up">
             <h1 class="lg:text-4xl md:text-3xl text-2xl font-bold dark:text-white">Skills</h1>
-            <div class="divider m-auto"></div>
-            <div id="tools" class="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
-                <div class="w-3/4 px-2 mx-auto">
-                    <div class="card card-tools shadow-2xl rounded-lg px-5 py-5 mb-2">
-                        <div class="text-center">
-                            <i class="devicon-github-plain colored mx-auto text-9xl"></i>
-                            <h5 class="ml-2 text-xl mt-5 mb-2 font-medium dark:text-white">GitHub</h5>
-                            <p>Check my gitHub profile <a href="https://github.com/MoonLGH"
-                                    class="font-bold text-sky-400">Here</a></p>
+            <div class="divider m-auto my-4"></div>
+            <div class="swiper-container pb-12 overflow-hidden">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide w-3/4 px-2">
+                        <div class="card card-tools shadow-2xl rounded-lg px-5 py-5 mb-2 bg-white dark:bg-gray-800">
+                            <div class="text-center">
+                                <i class="devicon-github-plain colored mx-auto text-9xl"></i>
+                                <h5 class="ml-2 text-xl mt-5 mb-2 font-medium dark:text-white">GitHub</h5>
+                                <p>Check my gitHub profile <a href="https://github.com/MoonLGH" class="font-bold text-sky-400">Here</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide w-3/4 px-2">
+                        <div class="card card-tools shadow-2xl rounded-lg px-5 py-5 mb-2 bg-white dark:bg-gray-800">
+                            <div class="text-center">
+                                <i class="devicon-tailwindcss-plain colored mx-auto text-9xl"></i>
+                                <h5 class="ml-2 text-xl mt-5 mb-2 font-medium dark:text-white">Tailwind</h5>
+                                <p>If you wondering what this is, just look at this site, this site uses tailwind.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide w-3/4 px-2">
+                        <div class="card card-tools shadow-2xl rounded-lg px-5 py-5 mb-2 bg-white dark:bg-gray-800">
+                            <div class="text-center h-60">
+                                <i class="devicon-html5-plain colored mx-auto text-9xl"></i>
+                                <h5 class="ml-2 text-xl mt-5 mb-2 font-medium dark:text-white ">Html</h5>
+                                <p>If you wondering what this is, just look at this site, this site uses HTML.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="swiper-slide w-3/4 px-2">
+                        <div class="card card-tools shadow-2xl rounded-lg px-5 py-5 mb-2 bg-white dark:bg-gray-800">
+                            <div class="text-center">
+                                <i class="devicon-css3-plain colored mx-auto text-9xl"></i>
+                                <h5 class="ml-2 text-xl mt-5 mb-2 font-medium dark:text-white ">CSS</h5>
+                                <p>This Includes SCSS and LESS, I think I'm decent on this thing</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 5 -->
+                    <div class="swiper-slide w-3/4 px-2">
+                        <div class="card card-tools shadow-2xl rounded-lg px-5 py-5 mb-2 bg-white dark:bg-gray-800">
+                            <div class="text-center">
+                                <i class="devicon-nodejs-plain colored mx-auto text-9xl"></i>
+                                <h5 class="ml-2 text-xl mt-5 mb-2 font-medium dark:text-white ">NodeJS</h5>
+                                <p>NodeJS is satisfying, I love it</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 6 -->
+                    <div class="swiper-slide w-3/4 px-2">
+                        <div class="card card-tools shadow-2xl rounded-lg px-5 py-5 mb-2 bg-white dark:bg-gray-800">
+                            <div class="text-center">
+                                <i class="devicon-javascript-plain colored mx-auto text-9xl"></i>
+                                <h5 class="ml-2 text-xl mt-5 mb-2 font-medium dark:text-white ">Javascript</h5>
+                                <p>JS is my first Programming language, I think from 2020</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 7 -->
+                    <div class="swiper-slide w-3/4 px-2">
+                        <div class="card card-tools shadow-2xl rounded-lg px-5 py-5 mb-2 bg-white dark:bg-gray-800">
+                            <div class="text-center">
+                                <i class="devicon-typescript-plain colored mx-auto text-9xl"></i>
+                                <h5 class="ml-2 text-xl mt-5 mb-2 font-medium dark:text-white ">Typescript</h5>
+                                <p>I can explain this in 3 words, I love Typescript</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 8 -->
+                    <div class="swiper-slide w-3/4 px-2">
+                        <div class="card card-tools shadow-2xl rounded-lg px-5 py-5 mb-2 bg-white dark:bg-gray-800">
+                            <div class="text-center">
+                                <i class="devicon-python-plain mx-auto text-9xl"></i>
+                                <h5 class="ml-2 text-xl mt-5 mb-2 font-medium dark:text-white ">Python(3)</h5>
+                                <p>I don't actually like python, but I can use it.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 9 -->
+                    <div class="swiper-slide w-3/4 px-2">
+                        <div class="card card-tools shadow-2xl rounded-lg px-5 py-5 mb-2 bg-white dark:bg-gray-800">
+                            <div class="text-center">
+                                <i class="devicon-mongodb-plain colored mx-auto text-9xl"></i>
+                                <h5 class="ml-2 text-xl mt-5 mb-2 font-medium dark:text-white">MongoDB</h5>
+                                <p>I LOVE THIS, ESPECIALLY IF ITS COMBINED WITH TS</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 10 -->
+                    <div class="swiper-slide w-3/4 px-2">
+                        <div class="card card-tools shadow-2xl rounded-lg px-5 py-5 mb-2 bg-white dark:bg-gray-800">
+                            <div class="text-center">
+                                <i class="devicon-photoshop-plain colored mx-auto text-9xl"></i>
+                                <h5 class="ml-2 text-xl mt-5 mb-2 font-medium dark:text-white">Photoshop</h5>
+                                <p>I only use it to make Graphical Design</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 11 -->
+                    <div class="swiper-slide w-3/4 px-2">
+                        <div class="card card-tools shadow-2xl rounded-lg px-5 py-5 mb-2 bg-white dark:bg-gray-800">
+                            <div class="text-center">
+                                <i class="devicon-figma-plain colored mx-auto text-9xl"></i>
+                                <h5 class="ml-2 text-xl mt-5 mb-2 font-medium dark:text-white">Figma</h5>
+                                <p>In the past, I used to use PS to make a mockup, but now I use this</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 12 -->
+                    <div class="swiper-slide w-3/4 px-2">
+                        <div class="card card-tools shadow-2xl rounded-lg px-5 py-5 mb-2 bg-white dark:bg-gray-800">
+                            <div class="text-center">
+                                <i class="devicon-c-plain colored mx-auto text-9xl"></i>
+                                <h5 class="ml-2 text-xl mt-5 mb-2 font-medium dark:text-white">C (Still Learning)</h5>
+                                <p>abCdefg, how do I explain this, it's complicated</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 13 -->
+                    <div class="swiper-slide w-3/4 px-2">
+                        <div class="card card-tools shadow-2xl rounded-lg px-5 py-5 mb-2 bg-white dark:bg-gray-800">
+                            <div class="text-center">
+                                <i class="devicon-cplusplus-plain colored mx-auto text-9xl"></i>
+                                <h5 class="ml-2 text-xl mt-5 mb-2 font-medium dark:text-white">C++ (Still Learning)</h5>
+                                <p>Who even do C without CPP, ofc I'm learning CPP</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="w-3/4 px-2 mx-auto">
-                    <div class="card card-tools shadow-2xl rounded-lg px-5 py-5 mb-2">
-                        <div class="text-center">
-                            <i class="devicon-tailwindcss-plain colored mx-auto text-9xl"></i>
-                            <h5 class="ml-2 text-xl mt-5 mb-2 font-medium dark:text-white">Tailwind</h5>
-                            <p>If you wondering what this is, just look at this site, this site uses tailwind.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-3/4 px-2 mx-auto">
-                    <div class="card card-tools shadow-2xl rounded-lg px-5 py-5 mb-2">
-                        <div class="text-center h-60">
-                            <i class="devicon-html5-plain colored mx-auto text-9xl"></i>
-                            <h5 class="ml-2 text-xl mt-5 mb-2 font-medium dark:text-white ">Html</h5>
-                            <p>If you wondering what this is, just look at this site, this site uses HTML.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-3/4 px-2 mx-auto">
-                    <div class="card card-tools shadow-2xl rounded-lg px-5 py-5 mb-2">
-                        <div class="text-center">
-                            <i class="devicon-css3-plain colored mx-auto text-9xl"></i>
-                            <h5 class="ml-2 text-xl mt-5 mb-2 font-medium dark:text-white ">CSS</h5>
-                            <p>This Includes SCSS and LESS, I think I'm decent on this thing</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-3/4 px-2 mx-auto">
-                    <div class="card card-tools shadow-2xl rounded-lg px-5 py-5 mb-2">
-                        <div class="text-center">
-                            <i class="devicon-nodejs-plain colored mx-auto text-9xl"></i>
-                            <h5 class="ml-2 text-xl mt-5 mb-2 font-medium dark:text-white ">NodeJS</h5>
-                            <p>NodeJS is satisfying, I love it</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-3/4 px-2 mx-auto">
-                    <div class="card card-tools shadow-2xl rounded-lg px-5 py-5 mb-2">
-                        <div class="text-center">
-                            <i class="devicon-javascript-plain colored mx-auto text-9xl"></i>
-                            <h5 class="ml-2 text-xl mt-5 mb-2 font-medium dark:text-white ">Javascript</h5>
-                            <p>JS is my first Programming language, I think from 2020</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-3/4 px-2 mx-auto">
-                    <div class="card card-tools shadow-2xl rounded-lg px-5 py-5 mb-2">
-                        <div class="text-center">
-                            <i class="devicon-typescript-plain colored mx-auto text-9xl"></i>
-                            <h5 class="ml-2 text-xl mt-5 mb-2 font-medium dark:text-white ">Typescript</h5>
-                            <p>I can explain this in 3 words, I love Typescript</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-3/4 px-2 mx-auto">
-                    <div class="card card-tools shadow-2xl rounded-lg px-5 py-5 mb-2">
-                        <div class="text-center">
-                            <i class="devicon-python-plain mx-auto text-9xl"></i>
-                            <h5 class="ml-2 text-xl mt-5 mb-2 font-medium dark:text-white ">Python(3)</h5>
-                            <p>I don't actually like python, but I can use it.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-3/4 px-2 mx-auto">
-                    <div class="card card-tools shadow-2xl rounded-lg px-5 py-5 mb-2">
-                        <div class="text-center">
-                            <i class="devicon-mongodb-plain colored mx-auto text-9xl"></i>
-                            <h5 class="ml-2 text-xl mt-5 mb-2 font-medium dark:text-white">MongoDB</h5>
-                            <p>I LOVE THIS, ESPECIALLY IF ITS COMBINED WITH TS</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-3/4 px-2 mx-auto">
-                    <div class="card card-tools shadow-2xl rounded-lg px-5 py-5 mb-2">
-                        <div class="text-center">
-                            <i class="devicon-photoshop-plain colored mx-auto text-9xl"></i>
-                            <h5 class="ml-2 text-xl mt-5 mb-2 font-medium dark:text-white">Photoshop</h5>
-                            <p>I only use it to make Graphical Design</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-3/4 px-2 mx-auto">
-                    <div class="card card-tools shadow-2xl rounded-lg px-5 py-5 mb-2">
-                        <div class="text-center">
-                            <i class="devicon-figma-plain colored mx-auto text-9xl"></i>
-                            <h5 class="ml-2 text-xl mt-5 mb-2 font-medium dark:text-white">Figma</h5>
-                            <p>In the past, I used to use PS to make a mockup, but now I use this</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-3/4 px-2 mx-auto">
-                    <div class="card card-tools shadow-2xl rounded-lg px-5 py-5 mb-2">
-                        <div class="text-center">
-                            <i class="devicon-c-plain colored mx-auto text-9xl"></i>
-                            <h5 class="ml-2 text-xl mt-5 mb-2 font-medium dark:text-white">C (Still Learning)</h5>
-                            <p>abCdefg, how do I explain this, it's complicated</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-3/4 px-2 mx-auto">
-                    <div class="card card-tools shadow-2xl rounded-lg px-5 py-5 mb-2">
-                        <div class="text-center">
-                            <i class="devicon-cplusplus-plain colored mx-auto text-9xl"></i>
-                            <h5 class="ml-2 text-xl mt-5 mb-2 font-medium dark:text-white">C++ (Still Learning)</h5>
-                            <p>Who even do C without CPP, ofc I'm learning CPP</p>
-                        </div>
-                    </div>
-                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
             </div>
         </section>
+
         <section class="text-center pt-12 pb-12" data-aos="fade-down">
             <div class="flex flex-col w-full lg:flex-row">
                 <div
@@ -542,6 +570,32 @@
         <p>Copyright © 2023</p>
     </div>
 </footer>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        breakpoints: {
+            640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+            },
+            1024: {
+                slidesPerView: 4,
+                spaceBetween: 40,
+            },
+        },
+    });
+</script>
 
 <!-- needed so purgeCSS not remove their styles from the css file on production (because the element pushed from the js dom)  -->
 <placeholder class="hidden">
