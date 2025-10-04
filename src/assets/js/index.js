@@ -15,23 +15,7 @@ setInterval(() => {
 }, 1500)
 
 async function get(name) {
-    const res = await fetch(`https://api.github.com/users/${name}`)
-    const data = await res.json()
-    const el = document.getElementById("GHAvatar")
-
-    
-    if(data.avatar_url) {
-        el.src = data.avatar_url
-    } else {
         el.src = "https://github.com/MoonLGH/portfolio-assets/blob/output/pfpLinked.jpeg?raw=true"
-    }
-    setInterval(() =>{
-        if(el.src === data.avatar_url) {
-            el.src = "https://github.com/MoonLGH/portfolio-assets/blob/output/pfpLinked.jpeg?raw=true"
-        } else {
-            el.src = data.avatar_url
-        }
-    },10000)
 }
 
 get("MoonLGH")
