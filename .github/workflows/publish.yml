@@ -16,16 +16,11 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'     # ✅ Parcel butuh Node modern (fix ??=)
-          cache: 'npm'
+          node-version: '20'   # fix error ??= dengan Node modern
 
       - name: Install dependencies
         run: |
-          if [ -f package-lock.json ]; then
-            npm ci
-          else
-            npm i
-          fi
+          npm i
 
       - name: Test
         run: npm run test --if-present
@@ -41,5 +36,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          # optional: keep history = true kalau perlu riwayat commit di gh-pages
-          # keep_files: false
