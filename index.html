@@ -1,522 +1,434 @@
-<!DOCTYPE html><html lang=en><meta charset=UTF-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width, initial-scale=1.0"><title>MoonL/Tsukari</title><link rel=stylesheet href=/MoonLGH.github.io.6a614241.css><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&amp;display=swap" rel=stylesheet><link rel=stylesheet href=/MoonLGH.github.io.dc563ecd.css><link href=https://unpkg.com/aos@2.3.1/dist/aos.css rel=stylesheet><script src=https://unpkg.com/aos@2.3.1/dist/aos.js defer></script><script src=/MoonLGH.github.io.8d572776.js defer></script><link rel=stylesheet href=https://unpkg.com/swiper/swiper-bundle.min.css><style>.swiper-slide{justify-content:center;display:flex}</style><header class="backdrop-blur-[10px] bgop8 fixed flex h-[60px] inset-x-0 items-center justify-between max-w-5xl mx-auto px-8 rounded-2xl saturate-100 shadow-sm top-4 transition-colors w-[95%] z-40" style=transform:none>
-    <a class="flex gap-1 items-center justify-center" href=/><span class=sr-only>Homepage</span>MoonL</a>
-    <div class="flex gap-2 items-center">
-        <nav>
-            <ul class="hidden md:flex space-x-2">
-                <li class="flex h-[60px] items-center justify-center relative"><a class="font-medium px-3 py-2 rounded text-muted-foreground text-sm transition-colors" href=/>Home</a></li>
-                <li class="flex h-[60px] items-center justify-center relative"><a class="font-medium px-3 py-2 rounded text-muted-foreground text-sm transition-colors" href=/projects>Projects</a></li>
-            </ul>
+<!DOCTYPE html><html lang=en data-theme=emerald><meta charset=UTF-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width, initial-scale=1.0"><title>MoonL — Portfolio</title><script src=https://cdn.tailwindcss.com></script><link href=https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css rel=stylesheet><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&amp;display=swap" rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/flag-icons@7.1.0/css/flag-icons.min.css><style>:root{--page-max:1100px}html{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,Apple Color Emoji,Segoe UI Emoji}@page{size:A4;margin:12mm}.avoid-break{-moz-column-break-inside:avoid;break-inside:avoid;page-break-inside:avoid}.print-shadow-none{box-shadow:none!important}.print-no-bg{background:#fff!important}@media print{.no-print{display:none!important}.print-only{display:block!important}.container{max-width:100%!important}.card{border:1px solid #e5e7eb}}</style><body class="bg-base-100 text-base-content">
+  
+  <header class="backdrop-blur bg-base-100/80 border-b border-base-200 no-print sticky top-0 z-50">
+    <div class="max-w-[var(--page-max)] mx-auto navbar">
+      <div class=navbar-start>
+        <a href=#home class="btn btn-ghost font-extrabold text-xl tracking-tight">MoonL</a>
+      </div>
+      <div class="hidden lg:flex navbar-center">
+        <ul class="gap-1 menu menu-horizontal">
+          <li><a href=#home>Home</a></li>
+          <li><a href=#skills>Skills</a></li>
+          <li><a href=#education>Education</a></li>
+          <li><a href=#languages>Languages</a></li>
+          <li><a href=#organizations>Organizations</a></li>
+          <li><a href=#achievements>Achievements</a></li>
+          <li><a href=/projects>Projects</a></li>
+        </ul>
+      </div>
+      <div class=navbar-end>
+        
+        <details class="dropdown dropdown-end lg:hidden">
+          <summary class="btn btn-ghost" aria-label="Open menu">
+            <svg xmlns:xmlns=http://www.w3.org/2000/svg fill=none stroke=currentColor class="h-6 w-6" viewBox="0 0 24 24"><path stroke-linecap=round stroke-linejoin=round stroke-width=2 d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </summary>
+          <ul class="bg-base-100 dropdown-content menu mt-3 p-2 rounded-box shadow w-56">
+            <li><a href=#home>Home</a></li>
+            <li><a href=#skills>Skills</a></li>
+            <li><a href=#education>Education</a></li>
+            <li><a href=#languages>Languages</a></li>
+            <li><a href=#organizations>Organizations</a></li>
+            <li><a href=#achievements>Achievements</a></li>
+            <li><a href=/projects>Projects</a></li>
+          </ul>
+        </details>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-[var(--page-max)] mx-auto px-4 sm:px-6" id=home>
+    
+    <section class="lg:py-20 py-10 sm:py-14">
+      <div class="gap-8 grid items-center lg:grid-cols-2">
+        <div class="lg:order-1 order-2">
+          <h1 class="font-extrabold leading-tight lg:text-5xl sm:text-4xl text-3xl">
+            Hello, I’m <span class=text-primary>MoonL</span>
+          </h1>
+          <p class="mt-3 opacity-80 text-lg">Full‑stack Developer with a focus on modern, accessible, and reliable web applications.</p>
+          <p class="mt-2 opacity-70 text-sm">I build production‑ready interfaces and scalable backends—and yes, I can turn complex requirements into clean, maintainable code.</p>
+          <div class="flex flex-wrap gap-3 mt-6">
+            <a href=/projects class="btn btn-primary">View Projects</a>
+            <a href=#skills class="btn btn-ghost">Explore Skills</a>
+          </div>
+        </div>
+        <div class="lg:order-2 order-1">
+          <div class="lg:w-64 mx-auto sm:w-56 w-40">
+            <img src="https://github.com/MoonLGH.png?size=320" alt="GitHub Avatar" class="mask mask-squircle ring ring-base-300 shadow-xl">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section id=skills class="py-10 sm:py-14">
+      <div class="flex items-center justify-between">
+        <h2 class="font-bold sm:text-3xl text-2xl">Skills</h2>
+        <a href=https://github.com/MoonLGH class="btn btn-ghost btn-sm no-print">GitHub Profile</a>
+      </div>
+      <div class=divider></div>
+      <div class="gap-4 grid lg:grid-cols-3 sm:grid-cols-2 xl:grid-cols-4">
+        
+        
+        <article class="avoid-break bg-base-100 card hover:shadow-lg print-shadow-none shadow-md transition">
+          <div class="card-body items-center text-center">
+            <i class="devicon-github-original text-6xl"></i>
+            <h3 class="card-title mt-2">GitHub</h3>
+            <p class=opacity-80>Version control, collaboration, and CI basics.</p>
+            <div class="card-actions mt-3"><a class="btn btn-outline btn-sm" href=https://github.com/MoonLGH>Open</a></div>
+          </div>
+        </article>
+        
+        <article class="avoid-break bg-base-100 card hover:shadow-lg print-shadow-none shadow-md transition">
+          <div class="card-body items-center text-center">
+            <i class="colored devicon-tailwindcss-plain text-6xl"></i>
+            <h3 class="card-title mt-2">Tailwind CSS</h3>
+            <p class=opacity-80>Utility‑first styling, responsive, accessible UI.</p>
+          </div>
+        </article>
+        
+        <article class="avoid-break bg-base-100 card hover:shadow-lg print-shadow-none shadow-md transition">
+          <div class="card-body items-center text-center">
+            <i class="colored devicon-html5-plain text-6xl"></i>
+            <h3 class="card-title mt-2">HTML</h3>
+            <p class=opacity-80>Semantic, SEO‑friendly structure and a11y.</p>
+          </div>
+        </article>
+        
+        <article class="avoid-break bg-base-100 card hover:shadow-lg print-shadow-none shadow-md transition">
+          <div class="card-body items-center text-center">
+            <i class="colored devicon-css3-plain text-6xl"></i>
+            <h3 class="card-title mt-2">CSS</h3>
+            <p class=opacity-80>Modern layout: Flexbox, Grid, and animations.</p>
+          </div>
+        </article>
+        
+        <article class="avoid-break bg-base-100 card hover:shadow-lg print-shadow-none shadow-md transition">
+          <div class="card-body items-center text-center">
+            <i class="colored devicon-nodejs-plain text-6xl"></i>
+            <h3 class="card-title mt-2">Node.js</h3>
+            <p class=opacity-80>APIs, workers, and pragmatic tooling.</p>
+          </div>
+        </article>
+        
+        <article class="avoid-break bg-base-100 card hover:shadow-lg print-shadow-none shadow-md transition">
+          <div class="card-body items-center text-center">
+            <i class="colored devicon-javascript-plain text-6xl"></i>
+            <h3 class="card-title mt-2">JavaScript</h3>
+            <p class=opacity-80>ESNext features, testing, and patterns.</p>
+          </div>
+        </article>
+        
+        <article class="avoid-break bg-base-100 card hover:shadow-lg print-shadow-none shadow-md transition">
+          <div class="card-body items-center text-center">
+            <i class="colored devicon-typescript-plain text-6xl"></i>
+            <h3 class="card-title mt-2">TypeScript</h3>
+            <p class=opacity-80>Types for reliability and developer speed.</p>
+          </div>
+        </article>
+        
+        <article class="avoid-break bg-base-100 card hover:shadow-lg print-shadow-none shadow-md transition">
+          <div class="card-body items-center text-center">
+            <i class="devicon-python-plain text-6xl"></i>
+            <h3 class="card-title mt-2">Python</h3>
+            <p class=opacity-80>Automation and data scripts when needed.</p>
+          </div>
+        </article>
+        
+        <article class="avoid-break bg-base-100 card hover:shadow-lg print-shadow-none shadow-md transition">
+          <div class="card-body items-center text-center">
+            <i class="colored devicon-mongodb-plain text-6xl"></i>
+            <h3 class="card-title mt-2">MongoDB</h3>
+            <p class=opacity-80>Schema design, aggregation, and indexing.</p>
+          </div>
+        </article>
+        
+        <article class="avoid-break bg-base-100 card hover:shadow-lg print-shadow-none shadow-md transition">
+          <div class="card-body items-center text-center">
+            <i class="colored devicon-photoshop-plain text-6xl"></i>
+            <h3 class="card-title mt-2">Photoshop</h3>
+            <p class=opacity-80>Visual assets and presentation polish.</p>
+          </div>
+        </article>
+        
+        <article class="avoid-break bg-base-100 card hover:shadow-lg print-shadow-none shadow-md transition">
+          <div class="card-body items-center text-center">
+            <i class="colored devicon-figma-plain text-6xl"></i>
+            <h3 class="card-title mt-2">Figma</h3>
+            <p class=opacity-80>Wireframes, components, and design systems.</p>
+          </div>
+        </article>
+        
+        <article class="avoid-break bg-base-100 card hover:shadow-lg print-shadow-none shadow-md transition">
+          <div class="card-body items-center text-center">
+            <i class="colored devicon-c-plain text-6xl"></i>
+            <h3 class="card-title mt-2">C (Learning)</h3>
+            <p class=opacity-80>Low‑level fundamentals and tooling.</p>
+          </div>
+        </article>
+        
+        <article class="avoid-break bg-base-100 card hover:shadow-lg print-shadow-none shadow-md transition">
+          <div class="card-body items-center text-center">
+            <i class="colored devicon-cplusplus-plain text-6xl"></i>
+            <h3 class="card-title mt-2">C++ (Learning)</h3>
+            <p class=opacity-80>Pragmatic approach to performance needs.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    
+    <section id=education class="py-10 sm:py-14">
+      <h2 class="font-bold sm:text-3xl text-2xl">Education &amp; Experiences</h2>
+      <div class=divider></div>
+      <div class="timeline timeline-vertical">
+        
+        <div class="avoid-break bg-base-100 print-shadow-none timeline-box timeline-start">
+          <p class="opacity-70 text-sm">2013 – 2019</p>
+          <h3 class=font-semibold>SD Negeri 05 Sunter Jaya</h3>
+          <p class="opacity-80 text-sm">Elementary School • Sunter Jaya, North Jakarta</p>
+        </div>
+        <div class=timeline-middle>
+          <div class="badge badge-primary">1</div>
+        </div>
+        <hr class=bg-base-300>
+        
+        <div class="avoid-break bg-base-100 print-shadow-none timeline-box timeline-end">
+          <p class="opacity-70 text-sm">2019 – 2022</p>
+          <h3 class=font-semibold>SMP Negeri 228 Jakarta</h3>
+          <p class="opacity-80 text-sm">Middle School • Sumur Batu, Central Jakarta</p>
+        </div>
+        <div class=timeline-middle>
+          <div class="badge badge-primary">2</div>
+        </div>
+        <hr class=bg-base-300>
+        
+        <div class="avoid-break bg-base-100 print-shadow-none timeline-box timeline-start">
+          <p class="opacity-70 text-sm">2022 – 2025</p>
+          <h3 class=font-semibold>SMA Negeri 1 Cikampek</h3>
+          <p class="opacity-80 text-sm">High School • Cikampek, West Java</p>
+          <p class="opacity-70 text-sm">Relocated to support family commitments and new opportunities.</p>
+        </div>
+        <div class=timeline-middle>
+          <div class="badge badge-primary">3</div>
+        </div>
+        <hr class=bg-base-300>
+        
+        <div class="avoid-break bg-base-100 print-shadow-none timeline-box timeline-end">
+          <p class="opacity-70 text-sm">2025 – Present</p>
+          <h3 class=font-semibold>Universitas Negeri Semarang</h3>
+          <p class="opacity-80 text-sm">B.Sc. in Computer Science (Teknik Informatika)</p>
+          <ul class="list-disc opacity-80 pl-5 text-sm">
+            <li>Focus: software development &amp; web technologies</li>
+            <li>Arcadia (HIMA) — Internship</li>
+            <li>Active in coding workshops (I‑Secret Ilkom)</li>
+          </ul>
+        </div>
+        <div class=timeline-middle>
+          <div class="badge badge-primary">4</div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section id=languages class="py-10 sm:py-14">
+      <h2 class="font-bold sm:text-3xl text-2xl">Languages</h2>
+      <div class=divider></div>
+      <div class="gap-4 grid lg:grid-cols-3 sm:grid-cols-2">
+        <article class="avoid-break bg-base-100 card print-shadow-none shadow-md">
+          <div class="card-body items-center text-center">
+            <span class="fi fi-id text-5xl"></span>
+            <h3 class="card-title mt-2">Indonesian</h3>
+            <p class=opacity-80>Native proficiency.</p>
+          </div>
+        </article>
+        <article class="avoid-break bg-base-100 card print-shadow-none shadow-md">
+          <div class="card-body items-center text-center">
+            <span class="fi fi-us text-5xl"></span>
+            <h3 class="card-title mt-2">English</h3>
+            <p class=opacity-80>Professional working proficiency.</p>
+          </div>
+        </article>
+        <article class="avoid-break bg-base-100 card print-shadow-none shadow-md">
+          <div class="card-body items-center text-center">
+            <span class="fi fi-jp text-5xl"></span>
+            <h3 class="card-title mt-2">Japanese</h3>
+            <p class=opacity-80>Studying toward JLPT N4/N3.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    
+    <section id=organizations class="py-10 sm:py-14">
+      <h2 class="font-bold sm:text-3xl text-2xl">Organization &amp; Extracurricular</h2>
+      <div class=divider></div>
+      <div class="gap-4 grid md:grid-cols-2">
+        
+        <article class="avoid-break bg-base-100 card print-shadow-none shadow-md">
+          <div class=card-body>
+            <h3 class=font-semibold>English Club (SMPN 228 Jakarta)</h3>
+            <p class="opacity-70 text-sm">2019 – 2021 • Vice President</p>
+          </div>
+        </article>
+        
+        <article class="avoid-break bg-base-100 card print-shadow-none shadow-md">
+          <div class=card-body>
+            <h3 class=font-semibold>Japan Club (SMAN 1 Cikampek)</h3>
+            <p class="opacity-70 text-sm">2022 – 2025 • Member</p>
+          </div>
+        </article>
+        
+        <article class="avoid-break bg-base-100 card print-shadow-none shadow-md">
+          <div class=card-body>
+            <h3 class=font-semibold>English Club (SMAN 1 Cikampek)</h3>
+            <p class="opacity-70 text-sm">2022 – 2025 • Member</p>
+          </div>
+        </article>
+        
+        <article class="avoid-break bg-base-100 card print-shadow-none shadow-md">
+          <div class=card-body>
+            <h3 class=font-semibold>Rekayasa Perangkat Lunak (SMAN 1 Cikampek)</h3>
+            <p class="opacity-70 text-sm">2022 – 2025 • Secretary / Manager / <a class=link href=https://github.com/RPLSaci>Acting Teacher</a></p>
+          </div>
+        </article>
+        
+        <article class="avoid-break bg-base-100 card md:col-span-2 print-shadow-none shadow-md">
+          <div class=card-body>
+            <h3 class=font-semibold>Student Council / OSIS (SMAN 1 Cikampek)</h3>
+            <p class="opacity-70 text-sm">2022 – 2025 • Manager &amp; Section 9 (ICT)</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    
+    <section id=achievements class="py-10 sm:py-14">
+      <div class="flex items-center justify-between">
+        <h2 class="font-bold sm:text-3xl text-2xl">Achievements</h2>
+        <span class="hidden opacity-70 sm:block text-sm">Selected highlights</span>
+      </div>
+      <div class=divider></div>
+
+      <div class="gap-4 grid md:grid-cols-2">
+        
+        <article class="avoid-break bg-base-100 card print-shadow-none shadow-md">
+          <div class=card-body>
+            <h3 class=card-title>freeCodeCamp — JavaScript Algorithms &amp; Data Structures</h3>
+            <div class="flex flex-wrap gap-2 mt-2">
+              <a class="btn btn-outline btn-sm" href=https://www.freecodecamp.org/certification/MoonL/javascript-algorithms-and-data-structures>View Certificate</a>
+            </div>
+          </div>
+          <figure class="pb-6 px-6">
+            <img class=rounded-xl src=/JSCert.31be0d7e.png alt="FCC JS Certificate preview">
+          </figure>
+        </article>
+
+        
+        <article class="avoid-break bg-base-100 card print-shadow-none shadow-md">
+          <div class=card-body>
+            <h3 class=card-title>freeCodeCamp — Front End Development Libraries</h3>
+            <div class="flex flex-wrap gap-2 mt-2">
+              <a class="btn btn-outline btn-sm" href=https://www.freecodecamp.org/certification/MoonL/front-end-development-libraries>View Certificate</a>
+            </div>
+          </div>
+          <figure class="pb-6 px-6">
+            <img class=rounded-xl src=/FCCFrontEnd.4903655a.png alt="FCC Frontend Certificate preview">
+          </figure>
+        </article>
+
+        
+        <article class="avoid-break bg-base-100 card print-shadow-none shadow-md">
+          <div class=card-body>
+            <h3 class=card-title>freeCodeCamp — Back End Development &amp; APIs</h3>
+            <div class="flex flex-wrap gap-2 mt-2">
+              <a class="btn btn-outline btn-sm" href=https://www.freecodecamp.org/certification/MoonL/back-end-development-and-apis>View Certificate</a>
+            </div>
+          </div>
+          <figure class="pb-6 px-6">
+            <img class=rounded-xl src=/FCCBackEnd.1b1d27c0.png alt="FCC Backend Certificate preview">
+          </figure>
+        </article>
+
+        
+        <article class="avoid-break bg-base-100 card print-shadow-none shadow-md">
+          <div class=card-body>
+            <h3 class=card-title>Hacktoberfest 2022 — Completed (Day 20)</h3>
+            <div class="flex flex-wrap gap-2 mt-2">
+              <a class="btn btn-outline btn-sm" href=https://dev.to/MoonLGH>Dev.to Badge</a>
+            </div>
+          </div>
+          <figure class="pb-6 px-6">
+            <img class=rounded-xl src=/Hacktoberfest2022.1f7a8ebc.jpg alt="Hacktoberfest 2022 poster">
+          </figure>
+        </article>
+
+        
+        <article class="avoid-break bg-base-100 card print-shadow-none shadow-md">
+          <div class=card-body>
+            <h3 class=card-title>Nihongo Nouryoku AGBJI (with Japan Foundation)</h3>
+            <p class=opacity-80>Olimpiade Bahasa Jepang II 2022 • N5 Level</p>
+            <div class="flex flex-wrap gap-2 mt-2">
+              <a class="btn btn-outline btn-sm" href=/assets/img/achievement/placementAGBJI.png>Placement</a>
+            </div>
+          </div>
+          <figure class="pb-6 px-6">
+            <img class="max-h-64 object-contain rounded-xl" src=/NNCert.3e915e24.png alt="Nihongo Nouryoku certificate">
+          </figure>
+        </article>
+
+        
+        <article class="avoid-break bg-base-100 card print-shadow-none shadow-md">
+          <div class=card-body>
+            <h3 class=card-title>Olimpiade Sains Sekolah — Informatika</h3>
+            <p class=opacity-80>Top 4 (3rd Runner‑Up). Advanced to OSN Kabupaten.</p>
+          </div>
+          <figure class="pb-6 px-6">
+            <img class="max-h-64 object-contain rounded-xl" src=/SertifOSSInfor2023.fa9ac1f1.jpg alt="OSS Informatics Certificate">
+          </figure>
+        </article>
+
+        
+        <article class="avoid-break bg-base-100 card print-shadow-none shadow-md">
+          <div class=card-body>
+            <h3 class=card-title>English Festival 2022 — Speech</h3>
+            <p class=opacity-80>2nd Place • SMAN 1 Cikampek</p>
+          </div>
+          <figure class="pb-6 px-6">
+            <img class="max-h-64 object-contain rounded-xl" src=/Efest.0fa70553.png alt="English Festival Certificate">
+          </figure>
+        </article>
+
+        
+        <article class="avoid-break bg-base-100 card md:col-span-2 print-shadow-none shadow-md">
+          <div class=card-body>
+            <h3 class=card-title>Kompetisi Inovasi PERIODA 2023</h3>
+            <p class=opacity-80>3rd Place • District Government of Karawang</p>
+          </div>
+          <figure class="pb-6 px-6">
+            <img class="max-h-64 object-contain rounded-xl" src=/PERIODA.31c491e4.png alt="PERIODA poster">
+          </figure>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  
+  <footer class="bg-base-100 border-base-200 border-t mt-10">
+    <div class="max-w-[var(--page-max)] mx-auto px-4 py-10 sm:px-6">
+      <div class="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <p class=font-semibold>MoonL — Portfolio</p>
+          <p class="opacity-70 text-sm">© <span id=y></span> All rights reserved.</p>
+        </div>
+        <nav class="flex flex-wrap gap-4 text-sm">
+          <a class="link link-hover" href=#home>Home</a>
+          <a class="link link-hover" href=/projects>Projects</a>
+          <a class="link link-hover" href=https://twitter.com/MoonLIsGood>Twitter/X</a>
+          <a class="link link-hover" href=https://www.facebook.com/farrel.attailah>Facebook</a>
         </nav>
-        <div data-orientation=vertical role=none class="bg-border h-6 shrink-0 w-px"></div>
-        <button onclick=minimenu() class="disabled:opacity-50 disabled:pointer-events-none flex focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-ring font-medium hover:text-accent-foreground items-center justify-center md:hidden p-0 ring-offset-background rounded-md size-9 text-sm transition-colors whitespace-nowrap" type=button aria-label="Toggle menu" aria-haspopup=menu aria-expanded=false data-state=closed><span class=sr-only>Toggle menu</span><svg xmlns:xmlns=http://www.w3.org/2000/svg width=24 height=24 fill=none stroke=currentColor stroke-linecap=round stroke-linejoin=round stroke-width=2 class="lucide lucide-menu size-4" viewBox="0 0 24 24"><line x1=4 x2=20 y1=12 y2=12 /><line x1=4 x2=20 y1=6 y2=6 /><line x1=4 x2=20 y1=18 y2=18 /></svg></button>
+      </div>
     </div>
-    <div id=minibar class="absolute backdrop-blur-[10px] bg-popover border hidden min-w-52 mt-32 overflow-hidden p-1 right-0 rounded-md shadow-md text-popover-foreground z-50" style=pointer-events:auto;opacity:.5;outline:none>
-        <a class="cursor-default flex gap-4 items-center m-1.5 outline-none place-content-center px-2 py-1.5 relative rounded-sm select-none text-sm transition-colors" href=/>
-            <div>Home</div>
-        </a>
-        <a class="cursor-default flex gap-4 items-center m-1.5 outline-none place-content-center px-2 py-1.5 relative rounded-sm select-none text-sm transition-colors" href=/home>
-            <div>Projects</div>
-        </a>
-    </div>
+  </footer>
 
-</header>
-
-
-    <div id=content-wrapper>
-        <section class="grid m-auto min-h-screen text-center top-land w-[80%]" data-aos=fade-down>
-            <div class="block m-auto md:inline-flex">
-                <img id=GHAvatar class="animate-pulsepfp mx-auto rounded-lg w-72">
-                <div class="container font-bold font-sans m-auto mx-0 pt-3 sm:mx-6 sm:text-left text-6xl text-center text-left">
-                    <h1 class="dark:text-white text-3xl">Hey, Im <br>
-                        <span class="text-6xl text-purple-400">MoonL</span>!
-                    </h1>
-                    <h2 class="font-light text-3xl">Fullstack Developer</h2>
-                    <p class="font-medium leading-relaxed mb-10 text-sm">I make <span class="font-bold text-dark text-purple-400">buttons</span> in <span class="font-bold text-dark text-purple-400">2 hours!</span></p>
-                </div>
-            </div>
-        </section>
-
-        <section class="m-auto mb-12 pt-10 text-center w-11/12" data-aos=fade-up>
-            <h1 class="dark:text-white font-bold lg:text-4xl md:text-3xl text-2xl">Skills</h1>
-            <div class="divider m-auto my-4"></div>
-            <div class="overflow-hidden pb-12 swiper-container">
-                <div class=swiper-wrapper>
-                    
-                    <div class="px-2 swiper-slide w-3/4">
-                        <div class="bg-white card card-tools dark:bg-gray-800 mb-2 px-5 py-5 rounded-lg shadow-2xl">
-                            <div class=text-center>
-                                <i class="colored devicon-github-plain mx-auto text-9xl"></i>
-                                <h5 class="dark:text-white font-medium mb-2 ml-2 mt-5 text-xl">GitHub</h5>
-                                <p>Check my gitHub profile <a href=https://github.com/MoonLGH class="font-bold text-sky-400">Here</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="px-2 swiper-slide w-3/4">
-                        <div class="bg-white card card-tools dark:bg-gray-800 mb-2 px-5 py-5 rounded-lg shadow-2xl">
-                            <div class=text-center>
-                                <i class="colored devicon-tailwindcss-plain mx-auto text-9xl"></i>
-                                <h5 class="dark:text-white font-medium mb-2 ml-2 mt-5 text-xl">Tailwind</h5>
-                                <p>If you wondering what this is, just look at this site, this site uses tailwind.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="px-2 swiper-slide w-3/4">
-                        <div class="bg-white card card-tools dark:bg-gray-800 mb-2 px-5 py-5 rounded-lg shadow-2xl">
-                            <div class="h-60 text-center">
-                                <i class="colored devicon-html5-plain mx-auto text-9xl"></i>
-                                <h5 class="dark:text-white font-medium mb-2 ml-2 mt-5 text-xl">Html</h5>
-                                <p>If you wondering what this is, just look at this site, this site uses HTML.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="px-2 swiper-slide w-3/4">
-                        <div class="bg-white card card-tools dark:bg-gray-800 mb-2 px-5 py-5 rounded-lg shadow-2xl">
-                            <div class=text-center>
-                                <i class="colored devicon-css3-plain mx-auto text-9xl"></i>
-                                <h5 class="dark:text-white font-medium mb-2 ml-2 mt-5 text-xl">CSS</h5>
-                                <p>This Includes SCSS and LESS, I think I'm decent on this thing</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="px-2 swiper-slide w-3/4">
-                        <div class="bg-white card card-tools dark:bg-gray-800 mb-2 px-5 py-5 rounded-lg shadow-2xl">
-                            <div class=text-center>
-                                <i class="colored devicon-nodejs-plain mx-auto text-9xl"></i>
-                                <h5 class="dark:text-white font-medium mb-2 ml-2 mt-5 text-xl">NodeJS</h5>
-                                <p>NodeJS is satisfying, I love it</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="px-2 swiper-slide w-3/4">
-                        <div class="bg-white card card-tools dark:bg-gray-800 mb-2 px-5 py-5 rounded-lg shadow-2xl">
-                            <div class=text-center>
-                                <i class="colored devicon-javascript-plain mx-auto text-9xl"></i>
-                                <h5 class="dark:text-white font-medium mb-2 ml-2 mt-5 text-xl">Javascript</h5>
-                                <p>JS is my first Programming language, I think from 2020</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="px-2 swiper-slide w-3/4">
-                        <div class="bg-white card card-tools dark:bg-gray-800 mb-2 px-5 py-5 rounded-lg shadow-2xl">
-                            <div class=text-center>
-                                <i class="colored devicon-typescript-plain mx-auto text-9xl"></i>
-                                <h5 class="dark:text-white font-medium mb-2 ml-2 mt-5 text-xl">Typescript</h5>
-                                <p>I can explain this in 3 words, I love Typescript</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="px-2 swiper-slide w-3/4">
-                        <div class="bg-white card card-tools dark:bg-gray-800 mb-2 px-5 py-5 rounded-lg shadow-2xl">
-                            <div class=text-center>
-                                <i class="devicon-python-plain mx-auto text-9xl"></i>
-                                <h5 class="dark:text-white font-medium mb-2 ml-2 mt-5 text-xl">Python(3)</h5>
-                                <p>I don't actually like python, but I can use it.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="px-2 swiper-slide w-3/4">
-                        <div class="bg-white card card-tools dark:bg-gray-800 mb-2 px-5 py-5 rounded-lg shadow-2xl">
-                            <div class=text-center>
-                                <i class="colored devicon-mongodb-plain mx-auto text-9xl"></i>
-                                <h5 class="dark:text-white font-medium mb-2 ml-2 mt-5 text-xl">MongoDB</h5>
-                                <p>I LOVE THIS, ESPECIALLY IF ITS COMBINED WITH TS</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="px-2 swiper-slide w-3/4">
-                        <div class="bg-white card card-tools dark:bg-gray-800 mb-2 px-5 py-5 rounded-lg shadow-2xl">
-                            <div class=text-center>
-                                <i class="colored devicon-photoshop-plain mx-auto text-9xl"></i>
-                                <h5 class="dark:text-white font-medium mb-2 ml-2 mt-5 text-xl">Photoshop</h5>
-                                <p>I only use it to make Graphical Design</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="px-2 swiper-slide w-3/4">
-                        <div class="bg-white card card-tools dark:bg-gray-800 mb-2 px-5 py-5 rounded-lg shadow-2xl">
-                            <div class=text-center>
-                                <i class="colored devicon-figma-plain mx-auto text-9xl"></i>
-                                <h5 class="dark:text-white font-medium mb-2 ml-2 mt-5 text-xl">Figma</h5>
-                                <p>In the past, I used to use PS to make a mockup, but now I use this</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="px-2 swiper-slide w-3/4">
-                        <div class="bg-white card card-tools dark:bg-gray-800 mb-2 px-5 py-5 rounded-lg shadow-2xl">
-                            <div class=text-center>
-                                <i class="colored devicon-c-plain mx-auto text-9xl"></i>
-                                <h5 class="dark:text-white font-medium mb-2 ml-2 mt-5 text-xl">C (Still Learning)</h5>
-                                <p>abCdefg, how do I explain this, it's complicated</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="px-2 swiper-slide w-3/4">
-                        <div class="bg-white card card-tools dark:bg-gray-800 mb-2 px-5 py-5 rounded-lg shadow-2xl">
-                            <div class=text-center>
-                                <i class="colored devicon-cplusplus-plain mx-auto text-9xl"></i>
-                                <h5 class="dark:text-white font-medium mb-2 ml-2 mt-5 text-xl">C++ (Still Learning)</h5>
-                                <p>Who even do C without CPP, ofc I'm learning CPP</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class=swiper-pagination></div>
-            </div>
-        </section>
-
-        <section class="pb-12 pt-12 text-center" data-aos=fade-down>
-            <div class="flex flex-col lg:flex-row w-full">
-                <div class="card dark:text-white flex-grow font-bold grid lg:text-4xl m-auto md:text-3xl place-items-center text-2xl text-3xl">
-                    Education &amp; Experiences</div>
-                <div class="divider lg:divider-horizontal"></div>
-                <div class="card flex-grow grid lg:text-left">
-                    <div class=edu>
-                        <span class=text-xl>2013 - 2019</span>
-                        <br>
-                        <span class=text-2xl>SD NEGERI 05 SUNTER JAYA</span>
-                        <br>
-                        <span class=xs>An Elementary School located in Sunter Jaya, North Jakarta</span>
-                    </div>
-                    <div class=divider></div>
-                    <div class=edu>
-                        <span class=text-xl>2019 - 2022</span>
-                        <br>
-                        <span class=text-2xl>SMP NEGERI 228 JAKARTA</span>
-                        <br>
-                        <span class=xs>A Middle school located in Sumur Batu, Central Jakarta</span>
-                    </div>
-                    <div class=divider></div>
-                    <div class=edu>
-                        <span class=text-xl>2022 - 2025</span>
-                        <br>
-                        <span class=text-2xl>SMA NEGERI 1 CIKAMPEK</span>
-                        <br>
-                        <span class=xs>A High-School located on Cikampek, West Java</span>
-                        <br>
-                        <span class=xs>After Middle school, I moved to West Java to follow my dad's Project <span>
-                    </span></span></div>
-                    <div class=divider></div>
-                    <div class=edu>
-                        <span class=text-xl>2025 - Present</span>
-                        <br>
-                        <span class=text-2xl>Universitas Negeri Semarang</span>
-                        <br>
-                        <span class=xs>Bachelor's Degree in Computer Science (Teknik Informatika)</span>
-                        <br>
-                        <span class=xs>Currently focusing on software development and web technologies</span>
-                        <br>
-                        <span class=xs>Intern at Arcadia (Informatics Student Association/HIMA)</span>
-                        <br>
-                        <span class=xs>Participating in coding workshops(I-Secret Ilkom) and campus tech activities</span>
-                    </div>
-                </div>
-        </div></section>
-        <section class="m-auto pt-10 text-center w-90" data-aos=fade-up>
-            <h1 class="dark:text-white font-bold lg:text-4xl md:text-3xl text-2xl">Languages</h1>
-            <div class="divider m-auto"></div>
-            <div id=langs class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
-                <div class="mx-auto px-2 w-3/4">
-                    <div class="card card-tools mb-2 px-5 py-5 rounded-lg shadow-2xl">
-                        <div class=text-center>
-                            <i class="fi fi-id mx-auto rounded-lg shadow-2xl text-9xl"></i>
-                            <h5 class="dark:text-white font-medium mb-2 ml-2 mt-5 text-xl">Indonesia</h5>
-                            <p>Umm... im indonesian...</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="mx-auto px-2 w-3/4">
-                    <div class="card card-tools mb-2 px-5 py-5 rounded-lg shadow-2xl">
-                        <div class=text-center>
-                            <i class="fi fi-us mx-auto rounded-lg shadow-2xl text-9xl"></i>
-                            <h5 class="dark:text-white font-medium mb-2 ml-2 mt-5 text-xl">English</h5>
-                            <p>I won't say I'm fluent in English, but my English is kinda decent</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="mx-auto px-2 w-3/4">
-                    <div class="card card-tools mb-2 px-5 py-5 rounded-lg shadow-2xl">
-                        <div class=text-center>
-                            <i class="fi fi-jp mx-auto rounded-lg shadow-2xl text-9xl"></i>
-                            <h5 class="dark:text-white font-medium mb-2 ml-2 mt-5 text-xl">Japanese</h5>
-                            <p>I've been learning Japanese since Early 2020, and I'm planning to get JLPT N4/N3
-                                Certificates
-                                in a year or two</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="pb-12 pt-12 text-center" data-aos=fade-down>
-            <div class="flex flex-col lg:flex-row w-full">
-                <div class="card dark:text-white flex-grow font-bold grid lg:text-4xl m-auto md:text-3xl place-items-center text-2xl text-3xl">
-                    Organization &amp; Extraculicular</div>
-                <div class="divider lg:divider-horizontal"></div>
-                <div class="card flex-grow grid lg:text-left">
-                    <div class=edu>
-                        <span class=text-xl>2019 - 2021</span>
-                        <br>
-                        <span class=text-2xl>English Club (SMPN 228 Jakarta)</span>
-                        <br>
-                        <span class=xs>I was the vice president of the Extraculicular</span>
-                    </div>
-                    <div class=divider></div>
-                    <div class=edu>
-                        <span class=text-xl>2022 - 2025</span>
-                        <br>
-                        <span class=text-2xl>Japan Club (SMAN 1 Cikampek)</span>
-                        <br>
-                        <span class=xs>Member</span>
-                    </div>
-                    <div class=divider></div>
-                    <div class=edu>
-                        <span class=text-xl>2022 - 2025</span>
-                        <br>
-                        <span class=text-2xl>English Club (SMAN 1 Cikampek)</span>
-                        <br>
-                        <span class=xs>Member</span>
-                    </div>
-                    <div class=divider></div>
-                    <div class=edu>
-                        <span class=text-xl>2022 - 2025</span>
-                        <br>
-                        <span class=text-2xl>Rekayasa Perangkat Lunak (SMAN 1 Cikampek)</span>
-                        <br>
-                        <span class=xs>Secretary/Manager/<a href=https://github.com/RPLSaci>Acting
-                                Teacher</a></span>
-                    </div>
-                    <div class=divider></div>
-                    <div class=edu>
-                        <span class=text-xl>2022 - 2025</span>
-                        <br>
-                        <span class=text-2xl>Student Council/OSIS (SMAN 1 Cikampek)</span>
-                        <br>
-                        <span class=xs>Manager + Sekbid 9(teknologi informasi dan komunikasi)</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="pt-5 text-center" data-aos=fade-up>
-            <h1 class="dark:text-white font-bold lg:text-4xl md:text-3xl text-2xl">Achievements</h1>
-            <div id=achieve class=w-auto>
-                <div class="mx-auto px-2 w-3/4">
-                    <div class="!h-auto block card card-tools gap-4 grid-cols-2 lg:grid mb-2 px-5 py-5 rounded-lg shadow-2xl">
-                        <div class=text-center>
-                            <span class="font-medium mb-2 ml-2 mt-5 text-xl">FreeCodeCamp JavaScript Algorithm</span>
-                            <div class="card-actions hidden lg:block mx-auto place-content-center pt-2 text-center">
-                                <button class="btn justify-end tooltip w-min whitespace-pre-wrap" data-tip="Type: Programming Certificates
-Organiser: Freecodecamp">Information</button>
-                                <a class="btn justify-end normal-case" href=https://www.freecodecamp.org/certification/MoonL/javascript-algorithms-and-data-structures>View</a>
-                            </div>
-                        </div>
-                        <img class="mx-auto rounded-xl" src=/JSCert.31be0d7e.png width=400 height=400>
-                        <div class="block card-actions lg:hidden mx-auto pt-2 text-center">
-                            <button class="btn justify-end tooltip w-min whitespace-pre-wrap" data-tip="Type: Programming Certificates
-Organiser: Freecodecamp">Information</button>
-                            <a class="btn justify-end normal-case" href=https://www.freecodecamp.org/certification/MoonL/javascript-algorithms-and-data-structures>View</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="mx-auto px-2 w-3/4">
-                    <div class="!h-auto block card card-tools gap-4 grid-cols-2 lg:grid mb-2 px-5 py-5 rounded-lg shadow-2xl">
-                        <div class=text-center>
-                            <span class="font-medium mb-2 ml-2 mt-5 text-xl">FreeCodeCamp Front End Development</span>
-                            <div class="card-actions hidden lg:block mx-auto place-content-center pt-2 text-center">
-                                <button class="btn justify-end tooltip w-min whitespace-pre-wrap" data-tip="Type: Programming Certificates
-Organiser: Freecodecamp">Information</button>
-                                <a class="btn justify-end normal-case" href=https://www.freecodecamp.org/certification/MoonL/front-end-development-libraries>View</a>
-                            </div>
-                        </div>
-                        <img class="mx-auto rounded-xl" src=/FCCFrontEnd.4903655a.png width=400 height=400>
-                        <div class="block card-actions lg:hidden mx-auto pt-2 text-center">
-                            <button class="btn justify-end tooltip w-min whitespace-pre-wrap" data-tip="Type: Programming Certificates
-Organiser: Freecodecamp">Information</button>
-                            <a class="btn justify-end normal-case" href=https://www.freecodecamp.org/certification/MoonL/front-end-development-libraries>View</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="mx-auto px-2 w-3/4">
-                    <div class="!h-auto block card card-tools gap-4 grid-cols-2 lg:grid mb-2 px-5 py-5 rounded-lg shadow-2xl">
-                        <div class=text-center>
-                            <span class="font-medium mb-2 ml-2 mt-5 text-xl">FreeCodeCamp Back End Development and
-                                APIs</span>
-                            <div class="card-actions hidden lg:block mx-auto place-content-center pt-2 text-center">
-                                <button class="btn justify-end tooltip w-min whitespace-pre-wrap" data-tip="Type: Programming Certificates
-Organiser: Freecodecamp">Information</button>
-                                <a class="btn justify-end normal-case" href=https://www.freecodecamp.org/certification/MoonL/back-end-development-and-apis>View</a>
-                            </div>
-                        </div>
-                        <img class="mx-auto rounded-xl" src=/FCCBackEnd.1b1d27c0.png width=400 height=400>
-                        <div class="block card-actions lg:hidden mx-auto pt-2 text-center">
-                            <button class="btn justify-end tooltip w-min whitespace-pre-wrap" data-tip="Type: Programming Certificates
-Organiser: Freecodecamp">Information</button>
-                            <a class="btn justify-end normal-case" href=https://www.freecodecamp.org/certification/MoonL/back-end-development-and-apis>View</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="mx-auto px-2 w-3/4">
-                    <div class="!h-auto block card card-tools gap-4 grid-cols-2 lg:grid mb-2 px-5 py-5 rounded-lg shadow-2xl">
-                        <div class=text-center>
-                            <div class="container items-center place-content-center">
-                                <spaw class="font-medium mb-2 ml-2 mt-5 text-xl">Hacktoberfest 2022 Completion
-                                    (Day 20)
-                                    <div class="card-actions hidden lg:block mx-auto place-content-center pt-2 text-center">
-                                        <button class="btn justify-end tooltip w-min whitespace-pre-wrap" data-tip="Type: Programming Event
-Event organiser: DigitalOcean, Appwrite, Docker">Information</button>
-                                        <a class="btn justify-end normal-case" href=https://dev.to/MoonLGH>Dev.to
-                                            Badge</a>
-                                    </div>
-                            </spaw></div>
-                        </div>
-                        <img class="mx-auto rounded-xl" src=/Hacktoberfest2022.1f7a8ebc.jpg width=400 height=400>
-                        <div class="block card-actions lg:hidden mx-auto pt-2 text-center">
-                            <button class="btn justify-end tooltip w-min whitespace-pre-wrap" data-tip="Type: Programming Event
-Event organiser: DigitalOcean, Appwrite, Docker">Information</button>
-                            <a class="btn justify-end normal-case" href=https://dev.to/MoonLGH>Dev.to Badge</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="mx-auto px-2 w-3/4">
-                    <div class="!h-auto block card card-tools gap-4 grid-cols-2 lg:grid mb-2 px-5 py-5 rounded-lg shadow-2xl">
-                        <div class=text-center>
-                            <div class="container items-center place-content-center">
-                                <spaw class="font-medium mb-2 ml-2 mt-5 text-xl">Nihongo Nouryoku AGBJI(ft Japan
-                                    Foundation) Olimpiade Bahasa Jepang II 2022
-                                    <div class="card-actions hidden lg:block mx-auto place-content-center pt-2 text-center">
-                                        <button class="btn justify-end tooltip w-min whitespace-pre-wrap" data-tip="Type: N5 Japanese Language Olympics
-Level: National Level Highschooler
-Event organiser: AGBJI(Asosiasi Guru Bahasa Jepang Indonesia) &amp; Japan foundation">Information</button>
-                                        <a class="btn justify-end normal-case" href=/assets/img/achievement/placementAGBJI.png>Placement</a>
-                                    </div>
-                            </spaw></div>
-                        </div>
-                        <img class="h-64 mx-auto object-contain" src=/NNCert.3e915e24.png>
-                        <div class="block card-actions lg:hidden mx-auto pt-2 text-center">
-                            <button class="btn justify-end tooltip w-min whitespace-pre-wrap" data-tip="Type: N5 Japanese Language Olympics
-Level: National Level Highschooler
-Event organiser: AGBJI(Asosiasi Guru Bahasa Jepang Indonesia) &amp; Japan foundation">Information</button>
-                            <a class="btn justify-end normal-case" href=/assets/img/achievement/placementAGBJI.png>Placement</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="mx-auto px-2 w-3/4">
-                    <div class="!h-auto block card card-tools gap-4 grid-cols-2 lg:grid mb-2 px-5 py-5 rounded-lg shadow-2xl">
-                        <div class=text-center>
-                            <div class="container items-center place-content-center">
-                                <spaw class="font-medium mb-2 ml-2 mt-5 text-xl">Olimpiade Sains Sekolah
-                                    Informatika
-                                    <div class="card-actions hidden lg:block mx-auto place-content-center pt-2 text-center">
-                                        <button class="btn justify-end tooltip w-min whitespace-pre-wrap" data-tip="Type: Informatics Olympiad
-Level: School Level
-Event organiser: School&amp;KIR SMAN 1 Cikampek">Event</button>
-                                        <button class="btn justify-end tooltip w-min whitespace-pre-wrap" data-tip="TOP 4/3rd Runner Up Winner
-and continued to go on Indonesian National Olympiad in Informatics (OSN) Kabupaten/Regency Level">Information</button>
-                                    </div>
-                            </spaw></div>
-                        </div>
-                        <img class="h-64 mx-auto object-contain" src=/SertifOSSInfor2023.fa9ac1f1.jpg>
-                        <div class="block card-actions lg:hidden mx-auto pt-2 text-center">
-                            <button class="btn justify-end tooltip w-min whitespace-pre-wrap" data-tip="Type: Informatics Olympiad
-Level: School Level
-Event organiser: School&amp;KIR SMAN 1 Cikampek">Event</button>
-                            <button class="btn justify-end tooltip w-min whitespace-pre-wrap" data-tip="TOP 4/3rd Runner Up Winner
-and continued to go on Indonesian National Olympiad in Informatics (OSN) Kabupaten/Regency Level">Information</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="mx-auto px-2 w-3/4">
-                    <div class="!h-auto block card card-tools gap-4 grid-cols-2 lg:grid mb-2 px-5 py-5 rounded-lg shadow-2xl">
-                        <div class=text-center>
-                            <div class="container items-center place-content-center">
-                                <spaw class="font-medium mb-2 ml-2 mt-5 text-xl">Speech - English Festival 2022 SMAN 1
-                                    Cikampek
-                                    <div class="card-actions hidden lg:block mx-auto place-content-center pt-2 text-center">
-                                        <button class="btn justify-end tooltip w-min whitespace-pre-wrap" data-tip="Type: English Cometition
-Level: School Level
-Event organiser: English Club SMAN 1 Cikampek">Event</button>
-                                        <button class="btn justify-end tooltip w-min whitespace-pre-wrap" data-tip="2nd Place">Information</button>
-                                    </div>
-                            </spaw></div>
-                        </div>
-                        <img class="h-64 mx-auto object-contain" src=/Efest.0fa70553.png>
-                        <div class="block card-actions lg:hidden mx-auto pt-2 text-center">
-                            <button class="btn justify-end tooltip w-min whitespace-pre-wrap" data-tip="Type: English Cometition
-Level: School Level
-Event organiser: English Club SMAN 1 Cikampek">Event</button>
-                            <button class="btn justify-end tooltip w-min whitespace-pre-wrap" data-tip="2nd Place">Information</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="mx-auto px-2 w-3/4">
-                    <div class="!h-auto block card card-tools gap-4 grid-cols-2 lg:grid mb-2 px-5 py-5 rounded-lg shadow-2xl">
-                        <div class=text-center>
-                            <div class="container items-center place-content-center">
-                                <spaw class="font-medium mb-2 ml-2 mt-5 text-xl">Kompetisi Inovasi PERIODA 2023
-                                    <div class="card-actions hidden lg:block mx-auto place-content-center pt-2 text-center">
-                                        <button class="btn justify-end tooltip w-min whitespace-pre-wrap" data-tip="Type: Inovation Cometition
-Level: District Level
-Event organiser: District Goverment Of Karawang">Event</button>
-                                        <button class="btn justify-end tooltip w-min whitespace-pre-wrap" data-tip="3rd Place">Information</button>
-                                    </div>
-                            </spaw></div>
-                        </div>
-                        <img class="h-64 mx-auto object-contain" src=/PERIODA.31c491e4.png>
-                        <div class="block card-actions lg:hidden mx-auto pt-2 text-center">
-                            <button class="btn justify-end tooltip w-min whitespace-pre-wrap" data-tip="Type: Inovation Cometition
-Level: District Level
-Event organiser: District Goverment Of Karawang">Event</button>
-                            <button class="btn justify-end tooltip w-min whitespace-pre-wrap" data-tip="3rd Place">Information</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-
-<footer class="bg-base-200 footer footer-center mt-12 p-10 rounded text-base-content">
-    <div class="gap-4 grid grid-flow-col">
-        <a class="link link-hover" href=/>Home</a>
-        <a class="link link-hover" href=/projects/index.html>Project</a>
-    </div>
-    <div>
-        <div class="gap-4 grid grid-flow-col">
-            <a href=https://twitter.com/MoonLIsGood><svg xmlns:xmlns=http://www.w3.org/2000/svg width=24 height=24 class=fill-current viewBox="0 0 24 24"><path d="M24 4.557a9.8 9.8 0 0 1-2.828.775 4.93 4.93 0 0 0 2.165-2.724 9.9 9.9 0 0 1-3.127 1.195 4.92 4.92 0 0 0-3.594-1.555c-3.179 0-5.515 2.966-4.797 6.045A13.98 13.98 0 0 1 1.671 3.149a4.93 4.93 0 0 0 1.523 6.574 4.9 4.9 0 0 1-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.9 4.9 0 0 1-2.224.084 4.93 4.93 0 0 0 4.6 3.419A9.9 9.9 0 0 1 0 19.54a13.94 13.94 0 0 0 7.548 2.212c9.142 0 14.307-7.721 13.995-14.646A10 10 0 0 0 24 4.557"/></svg></a>
-            <a></a>
-            <a href=https://www.facebook.com/farrel.attailah><svg xmlns:xmlns=http://www.w3.org/2000/svg width=24 height=24 class=fill-current viewBox="0 0 24 24"><path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.378 14.192 5 15.115 5H18V0h-3.808C10.596 0 9 1.583 9 4.615Z"/></svg></a>
-        </div>
-    </div>
-    <div>
-        <p>Copyright © 2023</p>
-    </div>
-</footer>
-
-<script src=https://unpkg.com/swiper/swiper-bundle.min.js></script>
-<script>var swiper=new Swiper(".swiper-container",{slidesPerView:1,spaceBetween:10,pagination:{el:".swiper-pagination",clickable:!0},breakpoints:{640:{slidesPerView:2,spaceBetween:20},768:{slidesPerView:3,spaceBetween:30},1024:{slidesPerView:4,spaceBetween:40}}});</script>
-
-
-<placeholder class=hidden>
-    <div class="bg-gray-800 card h-52 indicator overflow-visible place-self-center shadow-xl text-white w-64">
-        <span class="badge badge-primary indicator-item">Forked</span>
-        <div class="card-body flex-none my-auto">
-            <h2 class="card-title mx-auto">Placeholder</h2>
-            <p>placeholder</p>
-        </div>
-        <div class="card-actions mx-auto pb-5 text-center">
-            <button class="btn btn-primary justify-end tooltip" data-tip=Star:${repo.stargazers_count}\nForks:${repo.forks_count}>Information</button>
-        </div>
-    </div>
-</placeholder>
+  <script>document.getElementById("y").textContent=new Date().getFullYear();</script>
 
