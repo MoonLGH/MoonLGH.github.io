@@ -11,6 +11,9 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" />
 
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -41,7 +44,7 @@
   <header class="no-print sticky top-0 z-50 border-b border-base-200 backdrop-blur bg-base-100/80">
     <div class="navbar mx-auto max-w-[var(--page-max)]">
       <div class="navbar-start">
-        <a href="#home" class="btn btn-ghost text-xl font-extrabold tracking-tight">MoonL</a>
+        <a href="#home" class="btn btn-ghost text-xl font-extrabold tracking-tight">Farrel Athaillah</a>
       </div>
       <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal gap-1">
@@ -80,7 +83,7 @@
       <div class="grid items-center gap-8 lg:grid-cols-2">
         <div class="order-2 lg:order-1">
           <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
-            Hello, I’m <span class="text-primary">MoonL</span>
+            Hello, I’m <span class="text-primary">Farrel Athaillah</span>
           </h1>
           <p class="mt-3 text-lg opacity-80">Full‑stack Developer with a focus on modern, accessible, and reliable web applications.</p>
           <p class="mt-2 text-sm opacity-70">I build production‑ready interfaces and scalable backends—and yes, I can turn complex requirements into clean, maintainable code.</p>
@@ -91,7 +94,7 @@
         </div>
         <div class="order-1 lg:order-2">
           <div class="mx-auto w-40 sm:w-56 lg:w-64">
-            <img src="https://github.com/MoonLGH.png?size=320" alt="GitHub Avatar" class="mask mask-squircle shadow-xl ring ring-base-300" />
+            <img id="GHAvatar" src="https://github.com/MoonLGH.png?size=320" alt="GitHub Avatar" class="mask mask-squircle shadow-xl ring ring-base-300" />
           </div>
         </div>
       </div>
@@ -468,6 +471,7 @@
     </div>
   </footer>
 
+  <script src="./assets/js/index.js" defer></script>
   <script>
     // Set current year in footer
     document.getElementById('y').textContent = new Date().getFullYear();
