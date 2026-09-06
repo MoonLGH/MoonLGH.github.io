@@ -2,7 +2,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "parcel src/*.html src/**/*.html",
-    "build": "parcel build src/*.html src/**/*.html && cp -r public/. dist/"
+    "build": "parcel build src/*.html src/**/*.html"
   },
   "dependencies": {
     "autoprefixer": "^10.4.7",
@@ -12,5 +12,11 @@
     "postcss": "^8.4.14",
     "postcss-purgecss": "^2.0.3",
     "tailwindcss": "^3.0.24"
+  },
+  "devDependencies": {
+    "parcel-reporter-static-files-copy": "^1.5.3"
+  },
+  "staticFiles": {
+    "staticPath": "public"
   }
 }
