@@ -1,479 +1,145 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="emerald">
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MoonL — Portfolio</title>
-
-  <!-- Tailwind + DaisyUI (CDN) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" />
-
-
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
-
-  <!-- Fonts & Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.1.0/css/flag-icons.min.css" />
-
-  <!-- Print enhancements -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Sylva — Into the living world</title>
+  <meta name="description" content="Restoring wild places through patient design, native planting, and a deeper kind of stewardship." />
   <style>
-    :root { --page-max: 1100px; }
-    html { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; }
-    @page { size: A4; margin: 12mm; }
-    /* Avoid awkward breaks in cards/headers when printing */
-    .avoid-break { break-inside: avoid; page-break-inside: avoid; }
-    .print-shadow-none { box-shadow: none !important; }
-    .print-no-bg { background: #ffffff !important; }
-    @media print {
-      .no-print { display: none !important; }
-      .print-only { display: block !important; }
-      .container { max-width: 100% !important; }
-      .card { border: 1px solid #e5e7eb; }
+    html, body { margin: 0; padding: 0; height: 100%; }
+    body { background: #080808; overflow: hidden; }
+
+    /* ── threeui-background + landing-page-frame ─────────────────────────
+       Mirrors the ThreeUI shell: the frame is relative + full-bleed, the
+       iframe absolute inset 0, revealed on load. */
+    .threeui-background {
+      position: relative;
+      isolation: isolate;
+      width: 100%;
+      height: 100%;
+      min-width: 0;
+      min-height: 0;
+      overflow: hidden;
+      background: #080808;
+    }
+    .landing-page-frame { position: relative; overflow: hidden; background: #080808; }
+    .landing-page-frame > iframe {
+      position: absolute;
+      inset: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      background: #080808;
+    }
+    .landing-page-frame[data-state="loading"] > iframe { opacity: 0; pointer-events: none; }
+    .landing-page-frame[data-state="ready"] > iframe {
+      opacity: 1;
+      pointer-events: auto;
+      transition: opacity 180ms ease-out;
     }
   </style>
 </head>
+<body>
+  <div class="threeui-background landing-page-frame" data-state="loading">
+    <iframe
+      id="sylva-frame"
+      title="Sylva — Into the living world"
+      data-src="/landing-pages/inner-green-3d.html"
+      loading="eager"
+      allow="fullscreen"
+    ></iframe>
+  </div>
 
-<body class="bg-base-100 text-base-content">
-  <!-- Top Bar -->
-  <header class="no-print sticky top-0 z-50 border-b border-base-200 backdrop-blur bg-base-100/80">
-    <div class="navbar mx-auto max-w-[var(--page-max)]">
-      <div class="navbar-start">
-        <a href="#home" class="btn btn-ghost text-xl font-extrabold tracking-tight">Farrel Athaillah</a>
-      </div>
-      <div class="navbar-center hidden lg:flex">
-        <ul class="menu menu-horizontal gap-1">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#languages">Languages</a></li>
-          <li><a href="#organizations">Organizations</a></li>
-          <li><a href="#achievements">Achievements</a></li>
-          <li><a href="/projects">Projects</a></li>
-        </ul>
-      </div>
-      <div class="navbar-end">
-        <!-- Mobile menu -->
-        <details class="dropdown dropdown-end lg:hidden">
-          <summary class="btn btn-ghost" aria-label="Open menu">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
-          </summary>
-          <ul class="menu dropdown-content mt-3 w-56 rounded-box bg-base-100 p-2 shadow">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#languages">Languages</a></li>
-            <li><a href="#organizations">Organizations</a></li>
-            <li><a href="#achievements">Achievements</a></li>
-            <li><a href="/projects">Projects</a></li>
-          </ul>
-        </details>
-      </div>
-    </div>
-  </header>
-
-  <main class="mx-auto max-w-[var(--page-max)] px-4 sm:px-6" id="home">
-    <!-- Hero -->
-    <section class="py-10 sm:py-14 lg:py-20">
-      <div class="grid items-center gap-8 lg:grid-cols-2">
-        <div class="order-2 lg:order-1">
-          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
-            Hello, I’m <span class="text-primary">Farrel Athaillah</span>
-          </h1>
-          <p class="mt-3 text-lg opacity-80">Full‑stack Developer with a focus on modern, accessible, and reliable web applications.</p>
-          <p class="mt-2 text-sm opacity-70">I build production‑ready interfaces and scalable backends—and yes, I can turn complex requirements into clean, maintainable code.</p>
-          <div class="mt-6 flex flex-wrap gap-3">
-            <a href="/projects" class="btn btn-primary">View Projects</a>
-            <a href="#skills" class="btn btn-ghost">Explore Skills</a>
-          </div>
-        </div>
-        <div class="order-1 lg:order-2">
-          <div class="mx-auto w-40 sm:w-56 lg:w-64">
-            <img id="GHAvatar" src="https://github.com/MoonLGH/portfolio-assets/blob/output/pfpLinked.jpeg?raw=true" alt="GitHub Avatar" class="mask mask-squircle shadow-xl ring ring-base-300" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills -->
-    <section id="skills" class="py-10 sm:py-14">
-      <div class="flex items-center justify-between">
-        <h2 class="text-2xl sm:text-3xl font-bold">Skills</h2>
-        <a href="https://github.com/MoonLGH" class="btn btn-sm btn-ghost no-print">GitHub Profile</a>
-      </div>
-      <div class="divider"></div>
-      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        <!-- Reusable card component -->
-        <!-- GitHub -->
-        <article class="card bg-base-100 shadow-md hover:shadow-lg transition avoid-break print-shadow-none">
-          <div class="card-body items-center text-center">
-            <i class="devicon-github-original text-6xl"></i>
-            <h3 class="card-title mt-2">GitHub</h3>
-            <p class="opacity-80">Version control, collaboration, and CI basics.</p>
-            <div class="card-actions mt-3"><a class="btn btn-outline btn-sm" href="https://github.com/MoonLGH">Open</a></div>
-          </div>
-        </article>
-        <!-- Tailwind CSS -->
-        <article class="card bg-base-100 shadow-md hover:shadow-lg transition avoid-break print-shadow-none">
-          <div class="card-body items-center text-center">
-            <i class="devicon-tailwindcss-plain colored text-6xl"></i>
-            <h3 class="card-title mt-2">Tailwind CSS</h3>
-            <p class="opacity-80">Utility‑first styling, responsive, accessible UI.</p>
-          </div>
-        </article>
-        <!-- HTML -->
-        <article class="card bg-base-100 shadow-md hover:shadow-lg transition avoid-break print-shadow-none">
-          <div class="card-body items-center text-center">
-            <i class="devicon-html5-plain colored text-6xl"></i>
-            <h3 class="card-title mt-2">HTML</h3>
-            <p class="opacity-80">Semantic, SEO‑friendly structure and a11y.</p>
-          </div>
-        </article>
-        <!-- CSS -->
-        <article class="card bg-base-100 shadow-md hover:shadow-lg transition avoid-break print-shadow-none">
-          <div class="card-body items-center text-center">
-            <i class="devicon-css3-plain colored text-6xl"></i>
-            <h3 class="card-title mt-2">CSS</h3>
-            <p class="opacity-80">Modern layout: Flexbox, Grid, and animations.</p>
-          </div>
-        </article>
-        <!-- Node.js -->
-        <article class="card bg-base-100 shadow-md hover:shadow-lg transition avoid-break print-shadow-none">
-          <div class="card-body items-center text-center">
-            <i class="devicon-nodejs-plain colored text-6xl"></i>
-            <h3 class="card-title mt-2">Node.js</h3>
-            <p class="opacity-80">APIs, workers, and pragmatic tooling.</p>
-          </div>
-        </article>
-        <!-- JavaScript -->
-        <article class="card bg-base-100 shadow-md hover:shadow-lg transition avoid-break print-shadow-none">
-          <div class="card-body items-center text-center">
-            <i class="devicon-javascript-plain colored text-6xl"></i>
-            <h3 class="card-title mt-2">JavaScript</h3>
-            <p class="opacity-80">ESNext features, testing, and patterns.</p>
-          </div>
-        </article>
-        <!-- TypeScript -->
-        <article class="card bg-base-100 shadow-md hover:shadow-lg transition avoid-break print-shadow-none">
-          <div class="card-body items-center text-center">
-            <i class="devicon-typescript-plain colored text-6xl"></i>
-            <h3 class="card-title mt-2">TypeScript</h3>
-            <p class="opacity-80">Types for reliability and developer speed.</p>
-          </div>
-        </article>
-        <!-- Python -->
-        <article class="card bg-base-100 shadow-md hover:shadow-lg transition avoid-break print-shadow-none">
-          <div class="card-body items-center text-center">
-            <i class="devicon-python-plain text-6xl"></i>
-            <h3 class="card-title mt-2">Python</h3>
-            <p class="opacity-80">Automation and data scripts when needed.</p>
-          </div>
-        </article>
-        <!-- MongoDB -->
-        <article class="card bg-base-100 shadow-md hover:shadow-lg transition avoid-break print-shadow-none">
-          <div class="card-body items-center text-center">
-            <i class="devicon-mongodb-plain colored text-6xl"></i>
-            <h3 class="card-title mt-2">MongoDB</h3>
-            <p class="opacity-80">Schema design, aggregation, and indexing.</p>
-          </div>
-        </article>
-        <!-- Photoshop -->
-        <article class="card bg-base-100 shadow-md hover:shadow-lg transition avoid-break print-shadow-none">
-          <div class="card-body items-center text-center">
-            <i class="devicon-photoshop-plain colored text-6xl"></i>
-            <h3 class="card-title mt-2">Photoshop</h3>
-            <p class="opacity-80">Visual assets and presentation polish.</p>
-          </div>
-        </article>
-        <!-- Figma -->
-        <article class="card bg-base-100 shadow-md hover:shadow-lg transition avoid-break print-shadow-none">
-          <div class="card-body items-center text-center">
-            <i class="devicon-figma-plain colored text-6xl"></i>
-            <h3 class="card-title mt-2">Figma</h3>
-            <p class="opacity-80">Wireframes, components, and design systems.</p>
-          </div>
-        </article>
-        <!-- C -->
-        <article class="card bg-base-100 shadow-md hover:shadow-lg transition avoid-break print-shadow-none">
-          <div class="card-body items-center text-center">
-            <i class="devicon-c-plain colored text-6xl"></i>
-            <h3 class="card-title mt-2">C (Learning)</h3>
-            <p class="opacity-80">Low‑level fundamentals and tooling.</p>
-          </div>
-        </article>
-        <!-- C++ -->
-        <article class="card bg-base-100 shadow-md hover:shadow-lg transition avoid-break print-shadow-none">
-          <div class="card-body items-center text-center">
-            <i class="devicon-cplusplus-plain colored text-6xl"></i>
-            <h3 class="card-title mt-2">C++ (Learning)</h3>
-            <p class="opacity-80">Pragmatic approach to performance needs.</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Education & Experience -->
-    <section id="education" class="py-10 sm:py-14">
-      <h2 class="text-2xl sm:text-3xl font-bold">Education & Experiences</h2>
-      <div class="divider"></div>
-      <div class="timeline timeline-vertical">
-        <!-- Item -->
-        <div class="timeline-start timeline-box bg-base-100 avoid-break print-shadow-none">
-          <p class="text-sm opacity-70">2013 – 2019</p>
-          <h3 class="font-semibold">SD Negeri 05 Sunter Jaya</h3>
-          <p class="text-sm opacity-80">Elementary School • Sunter Jaya, North Jakarta</p>
-        </div>
-        <div class="timeline-middle">
-          <div class="badge badge-primary">1</div>
-        </div>
-        <hr class="bg-base-300" />
-        <!-- Item -->
-        <div class="timeline-end timeline-box bg-base-100 avoid-break print-shadow-none">
-          <p class="text-sm opacity-70">2019 – 2022</p>
-          <h3 class="font-semibold">SMP Negeri 228 Jakarta</h3>
-          <p class="text-sm opacity-80">Middle School • Sumur Batu, Central Jakarta</p>
-        </div>
-        <div class="timeline-middle">
-          <div class="badge badge-primary">2</div>
-        </div>
-        <hr class="bg-base-300" />
-        <!-- Item -->
-        <div class="timeline-start timeline-box bg-base-100 avoid-break print-shadow-none">
-          <p class="text-sm opacity-70">2022 – 2025</p>
-          <h3 class="font-semibold">SMA Negeri 1 Cikampek</h3>
-          <p class="text-sm opacity-80">High School • Cikampek, West Java</p>
-          <p class="text-sm opacity-70">Relocated to support family commitments and new opportunities.</p>
-        </div>
-        <div class="timeline-middle">
-          <div class="badge badge-primary">3</div>
-        </div>
-        <hr class="bg-base-300" />
-        <!-- Item -->
-        <div class="timeline-end timeline-box bg-base-100 avoid-break print-shadow-none">
-          <p class="text-sm opacity-70">2025 – Present</p>
-          <h3 class="font-semibold">Universitas Negeri Semarang</h3>
-          <p class="text-sm opacity-80">B.Sc. in Computer Science (Teknik Informatika)</p>
-          <ul class="list-disc pl-5 text-sm opacity-80">
-            <li>Focus: software development & web technologies</li>
-            <li>Active in coding workshops (I‑Secret Ilkom)</li>
-          </ul>
-        </div>
-        <div class="timeline-middle">
-          <div class="badge badge-primary">4</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Languages -->
-    <section id="languages" class="py-10 sm:py-14">
-      <h2 class="text-2xl sm:text-3xl font-bold">Languages</h2>
-      <div class="divider"></div>
-      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        <article class="card bg-base-100 shadow-md avoid-break print-shadow-none">
-          <div class="card-body items-center text-center">
-            <span class="fi fi-id text-5xl"></span>
-            <h3 class="card-title mt-2">Indonesian</h3>
-            <p class="opacity-80">Native proficiency.</p>
-          </div>
-        </article>
-        <article class="card bg-base-100 shadow-md avoid-break print-shadow-none">
-          <div class="card-body items-center text-center">
-            <span class="fi fi-us text-5xl"></span>
-            <h3 class="card-title mt-2">English</h3>
-            <p class="opacity-80">Professional working proficiency.</p>
-          </div>
-        </article>
-        <article class="card bg-base-100 shadow-md avoid-break print-shadow-none">
-          <div class="card-body items-center text-center">
-            <span class="fi fi-jp text-5xl"></span>
-            <h3 class="card-title mt-2">Japanese</h3>
-            <p class="opacity-80">Studying toward JLPT N4/N3.</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Organizations & Extracurricular -->
-    <section id="organizations" class="py-10 sm:py-14">
-      <h2 class="text-2xl sm:text-3xl font-bold">Organization & Extracurricular</h2>
-      <div class="divider"></div>
-      <div class="grid gap-4 md:grid-cols-2">
-        <!-- Item -->
-        <article class="card bg-base-100 shadow-md avoid-break print-shadow-none">
-          <div class="card-body">
-            <h3 class="font-semibold">English Club (SMPN 228 Jakarta)</h3>
-            <p class="text-sm opacity-70">2019 – 2021 • Vice President</p>
-          </div>
-        </article>
-        <!-- Item -->
-        <article class="card bg-base-100 shadow-md avoid-break print-shadow-none">
-          <div class="card-body">
-            <h3 class="font-semibold">Japan Club (SMAN 1 Cikampek)</h3>
-            <p class="text-sm opacity-70">2022 – 2025 • Member</p>
-          </div>
-        </article>
-        <!-- Item -->
-        <article class="card bg-base-100 shadow-md avoid-break print-shadow-none">
-          <div class="card-body">
-            <h3 class="font-semibold">English Club (SMAN 1 Cikampek)</h3>
-            <p class="text-sm opacity-70">2022 – 2025 • Member</p>
-          </div>
-        </article>
-        <!-- Item -->
-        <article class="card bg-base-100 shadow-md avoid-break print-shadow-none">
-          <div class="card-body">
-            <h3 class="font-semibold">Rekayasa Perangkat Lunak (SMAN 1 Cikampek)</h3>
-            <p class="text-sm opacity-70">2022 – 2025 • Secretary / Manager / <a class="link" href="https://github.com/RPLSaci">Acting Teacher</a></p>
-          </div>
-        </article>
-        <!-- Item -->
-        <article class="card bg-base-100 shadow-md avoid-break print-shadow-none md:col-span-2">
-          <div class="card-body">
-            <h3 class="font-semibold">Student Council / OSIS (SMAN 1 Cikampek)</h3>
-            <p class="text-sm opacity-70">2022 – 2025 • Manager & Section 9 (ICT)</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Achievements -->
-    <section id="achievements" class="py-10 sm:py-14">
-      <div class="flex items-center justify-between">
-        <h2 class="text-2xl sm:text-3xl font-bold">Achievements</h2>
-        <span class="text-sm opacity-70 hidden sm:block">Selected highlights</span>
-      </div>
-      <div class="divider"></div>
-
-      <div class="grid gap-4 md:grid-cols-2">
-        <!-- FCC JS -->
-        <article class="card bg-base-100 shadow-md avoid-break print-shadow-none">
-          <div class="card-body">
-            <h3 class="card-title">freeCodeCamp — JavaScript Algorithms & Data Structures</h3>
-            <div class="mt-2 flex flex-wrap gap-2">
-              <a class="btn btn-outline btn-sm" href="https://www.freecodecamp.org/certification/MoonL/javascript-algorithms-and-data-structures">View Certificate</a>
-            </div>
-          </div>
-          <figure class="px-6 pb-6">
-            <img class="rounded-xl" src="./assets/img/achievement/JSCert.png" alt="FCC JS Certificate preview" />
-          </figure>
-        </article>
-
-        <!-- FCC Frontend -->
-        <article class="card bg-base-100 shadow-md avoid-break print-shadow-none">
-          <div class="card-body">
-            <h3 class="card-title">freeCodeCamp — Front End Development Libraries</h3>
-            <div class="mt-2 flex flex-wrap gap-2">
-              <a class="btn btn-outline btn-sm" href="https://www.freecodecamp.org/certification/MoonL/front-end-development-libraries">View Certificate</a>
-            </div>
-          </div>
-          <figure class="px-6 pb-6">
-            <img class="rounded-xl" src="./assets/img/achievement/FCCFrontEnd.png" alt="FCC Frontend Certificate preview" />
-          </figure>
-        </article>
-
-        <!-- FCC Backend -->
-        <article class="card bg-base-100 shadow-md avoid-break print-shadow-none">
-          <div class="card-body">
-            <h3 class="card-title">freeCodeCamp — Back End Development & APIs</h3>
-            <div class="mt-2 flex flex-wrap gap-2">
-              <a class="btn btn-outline btn-sm" href="https://www.freecodecamp.org/certification/MoonL/back-end-development-and-apis">View Certificate</a>
-            </div>
-          </div>
-          <figure class="px-6 pb-6">
-            <img class="rounded-xl" src="./assets/img/achievement/FCCBackEnd.png" alt="FCC Backend Certificate preview" />
-          </figure>
-        </article>
-
-        <!-- Hacktoberfest 2022 -->
-        <article class="card bg-base-100 shadow-md avoid-break print-shadow-none">
-          <div class="card-body">
-            <h3 class="card-title">Hacktoberfest 2022 — Completed (Day 20)</h3>
-            <div class="mt-2 flex flex-wrap gap-2">
-              <a class="btn btn-outline btn-sm" href="https://dev.to/MoonLGH">Dev.to Badge</a>
-            </div>
-          </div>
-          <figure class="px-6 pb-6">
-            <img class="rounded-xl" src="./assets/img/achievement/Hacktoberfest2022.jpg" alt="Hacktoberfest 2022 poster" />
-          </figure>
-        </article>
-
-        <!-- AGBJI -->
-        <article class="card bg-base-100 shadow-md avoid-break print-shadow-none">
-          <div class="card-body">
-            <h3 class="card-title">Nihongo Nouryoku AGBJI (with Japan Foundation)</h3>
-            <p class="opacity-80">Olimpiade Bahasa Jepang II 2022 • N5 Level</p>
-            <div class="mt-2 flex flex-wrap gap-2">
-              <a class="btn btn-outline btn-sm" href="./assets/img/achievement/placementAGBJI.png">Placement</a>
-            </div>
-          </div>
-          <figure class="px-6 pb-6">
-            <img class="rounded-xl max-h-64 object-contain" src="./assets/img/achievement/NNCert.png" alt="Nihongo Nouryoku certificate" />
-          </figure>
-        </article>
-
-        <!-- OSS Informatics -->
-        <article class="card bg-base-100 shadow-md avoid-break print-shadow-none">
-          <div class="card-body">
-            <h3 class="card-title">Olimpiade Sains Sekolah — Informatika</h3>
-            <p class="opacity-80">Top 4 (3rd Runner‑Up). Advanced to OSN Kabupaten.</p>
-          </div>
-          <figure class="px-6 pb-6">
-            <img class="rounded-xl max-h-64 object-contain" src="./assets/img/achievement/SertifOSSInfor2023.jpg" alt="OSS Informatics Certificate" />
-          </figure>
-        </article>
-
-        <!-- English Festival -->
-        <article class="card bg-base-100 shadow-md avoid-break print-shadow-none">
-          <div class="card-body">
-            <h3 class="card-title">English Festival 2022 — Speech</h3>
-            <p class="opacity-80">2nd Place • SMAN 1 Cikampek</p>
-          </div>
-          <figure class="px-6 pb-6">
-            <img class="rounded-xl max-h-64 object-contain" src="./assets/img/achievement/Efest.png" alt="English Festival Certificate" />
-          </figure>
-        </article>
-
-        <!-- PERIODA -->
-        <article class="card bg-base-100 shadow-md avoid-break print-shadow-none md:col-span-2">
-          <div class="card-body">
-            <h3 class="card-title">Kompetisi Inovasi PERIODA 2023</h3>
-            <p class="opacity-80">3rd Place • District Government of Karawang</p>
-          </div>
-          <figure class="px-6 pb-6">
-            <img class="rounded-xl max-h-64 object-contain" src="./assets/img/achievement/PERIODA.png" alt="PERIODA poster" />
-          </figure>
-        </article>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="mt-10 border-t border-base-200 bg-base-100">
-    <div class="mx-auto max-w-[var(--page-max)] px-4 sm:px-6 py-10">
-      <div class="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-        <div>
-          <p class="font-semibold">MoonL — Portfolio</p>
-          <p class="text-sm opacity-70">© <span id="y"></span> All rights reserved.</p>
-        </div>
-        <nav class="flex flex-wrap gap-4 text-sm">
-          <a class="link link-hover" href="#home">Home</a>
-          <a class="link link-hover" href="/projects">Projects</a>
-          <a class="link link-hover" href="https://twitter.com/MoonLIsGood">Twitter/X</a>
-          <a class="link link-hover" href="https://www.facebook.com/farrel.attailah">Facebook</a>
-        </nav>
-      </div>
-    </div>
-  </footer>
-
-  <script src="./assets/js/index.js" defer></script>
   <script>
-    // Set current year in footer
-    document.getElementById('y').textContent = new Date().getFullYear();
+    (function () {
+      /* ── LandingPageFrame behavior ──────────────────────────────────────
+         The packaged document is served byte-for-byte. On load, the frame's
+         own <head> receives the page-typography sheet (one <style> appended
+         last, so it wins at equal specificity without !important). The
+         packaged file itself is never rewritten. */
+      var STYLE_ID = "threeui-page-typography";
+      var FONT_LINK_ID = "threeui-page-typography-fonts";
+
+      /* Sylva recipe, resolved with the configured usage:
+         headingFont/bodyFont = lexend (the page's authored face, no Google
+         fetch needed), weights 300/300, primary #ffffff (untouched), sizes
+         63 / 16.5, letter-spacing -0.006em — all authored defaults, so the
+         sheet restates the page as-is. */
+      var customization = {
+        css: [
+          ":root {",
+          "  --ink: #ffffff;",
+          "  --ink-soft: rgba(255, 255, 255, 0.62);",
+          "  --ink-faint: rgba(255, 255, 255, 0.44);",
+          "}",
+          "body { font-family: 'Lexend', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-weight: 300; }",
+          ".headline, .ghost {",
+          "  font-family: 'Lexend', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;",
+          "}",
+          ".headline {",
+          "  font-weight: 300;",
+          "  font-size: calc(63 * var(--u));",
+          "  line-height: calc(65 * var(--u));",
+          "  letter-spacing: -0.006em;",
+          "}",
+          ".lede {",
+          "  font-weight: 300;",
+          "  font-size: calc(16.5 * var(--u));",
+          "  line-height: calc(22 * var(--u));",
+          "}",
+          "@media (max-width: 900px) {",
+          "  .headline {",
+          "    font-size: calc(62 * var(--u));",
+          "    line-height: calc(66 * var(--u));",
+          "  }",
+          "  .lede {",
+          "    font-size: calc(19 * var(--u));",
+          "    line-height: calc(27 * var(--u));",
+          "  }",
+          "}"
+        ].join("\n")
+      };
+
+      function applyPageCustomization(frameDocument) {
+        if (!frameDocument || !frameDocument.head) return;
+        /* No fontHref: the configured face is the page's own, so no <link>. */
+
+        var style = frameDocument.getElementById(STYLE_ID);
+        if (!customization.css) {
+          if (style) style.remove();
+          return;
+        }
+        if (!style) {
+          style = frameDocument.createElement("style");
+          style.id = STYLE_ID;
+        }
+        if (style.textContent !== customization.css) style.textContent = customization.css;
+        frameDocument.head.append(style);
+      }
+
+      var frame = document.getElementById("sylva-frame");
+      var shell = document.querySelector(".landing-page-frame");
+
+      /* Mount: data-src holds the canonical URL so Parcel's resolver leaves the
+         packaged document untouched. Set src at runtime so the iframe loads the
+         byte-exact file that the build's static-copy step delivered to dist/. */
+      var sourceUrl = frame.getAttribute("data-src");
+      if (sourceUrl) {
+        frame.removeAttribute("data-src");
+        frame.src = sourceUrl;
+      }
+
+      function onReady() {
+        applyPageCustomization(frame.contentDocument);
+        if (shell) shell.setAttribute("data-state", "ready");
+      }
+
+      if (frame.complete && frame.contentDocument && frame.contentDocument.readyState !== "loading") {
+        onReady();
+      }
+      frame.addEventListener("load", onReady);
+    })();
   </script>
 </body>
 </html>

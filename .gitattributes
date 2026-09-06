@@ -1,0 +1,4 @@
+# ThreeUI Sylva Hero — canonical sources must stay byte-exact
+# (SHA-256 verified against the ThreeUI registered bundle)
+public/landing-pages/** -text
+dist/landing-pages/** -text
